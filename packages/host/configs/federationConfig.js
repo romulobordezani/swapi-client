@@ -1,3 +1,4 @@
+/* eslint-env node */
 const { dependencies } = require("../package.json");
 
 const federationConfig = (REMOTE_URL) => {

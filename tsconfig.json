@@ -12,6 +12,7 @@
     "strictNullChecks": true,
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
     "typeRoots": [
       "node_modules/@types",
       "packages/host/node_modules/@types",
@@ -23,14 +24,14 @@
         "./packages/host/@mf-types/DesignSystem/_types/*",
       ],
       "@hostTypes/*": [
-        "./packages/design-system/@mf-types/Host/*",
+        "./packages/design-system/@mf-types/Host/_types/*",
       ]
     },
     "types": ["@testing-library/jest-dom", "cypress", "@testing-library/cypress"]
   },
   "exclude": [".vscode", "node_modules/*", "**/node_modules/*", "**/dist/*", "**/*.cy.tsx"],
   "include": [
-    "packages/host/src/**/*",
-    "packages/design-system/src/**/*"
+    "packages/host/**/*",
+    "packages/design-system/**/*"
   ]
 }

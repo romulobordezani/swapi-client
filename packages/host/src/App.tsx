@@ -1,8 +1,10 @@
 import React from 'react';
-import RemoteButtonProps from '@dsTypes/Button';
+// import RemoteButtonProps from '@dsTypes/Button';
 import { Provider } from 'react-redux';
 
-const RemoteButton = React.lazy(() => import('DesignSystem/Button')) as typeof RemoteButtonProps;
+// const RemoteButton = React.lazy(() => import('DesignSystem/Button')) as typeof RemoteButtonProps;
+
+import RemoteButton from 'DesignSystem/Button';
 
 import ErrorBoundary from './ErrorBoundary';
 import { store } from './redux/store';
