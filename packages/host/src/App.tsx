@@ -1,19 +1,21 @@
 import React from 'react';
-import RemoteButtonProps from '@mfTypes/Button';
+import RemoteButtonProps from '@dsTypes/Button';
+import { Provider } from 'react-redux';
 
 const RemoteButton = React.lazy(() => import('DesignSystem/Button')) as typeof RemoteButtonProps;
 
 import ErrorBoundary from './ErrorBoundary';
+import { store } from './redux/store';
 
 const App = () => {
   return (
-    <div>
+    <Provider store={store}>
       <h1>Host Website</h1>
       <h2>this button was imported from Design System:</h2>
       <ErrorBoundary>
         <RemoteButton name="host-button">DS button</RemoteButton>
       </ErrorBoundary>
-    </div>
+    </Provider>
   );
 };
 

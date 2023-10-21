@@ -9,7 +9,8 @@
     "lint": "eslint \"packages/**/*.ts{,x}\" --fix",
     "prettier-format": "prettier --config .prettierrc 'packages/**/*.ts' --write",
     "serve": "wsrun --parallel serve",
-    "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\""
+    "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\"",
+    "lists": "tsc"
   },
   "repository": {
     "type": "git",

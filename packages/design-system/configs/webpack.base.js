@@ -1,6 +1,11 @@
 const path = require("path");
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { FederatedTypesPlugin } = require("@module-federation/typescript");
+const dotenv = require("dotenv").config({
+  path: path.join(__dirname, "../../../.env"),
+});
+
 const federationConfig = require("./federationConfig");
 
 module.exports = {
@@ -15,7 +20,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|ts)x?$/, // add |ts
+        test: /\.(js|ts)x?$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -36,9 +41,13 @@ module.exports = {
       },
     ],
   },
+
   plugins: [
+    new webpack.DefinePlugin({
+      "process.env": dotenv.parsed,
+    }),
     new FederatedTypesPlugin({
-      federationConfig,
+      federationConfig: federationConfig(process.env.HOST_URL),
     }),
 
     new HtmlWebpackPlugin({

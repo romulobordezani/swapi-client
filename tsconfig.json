@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "rootDirs": ["packages/host", "packages/design-system"],
+    "module": "umd",
+    "lib": ["ESNext", "dom"],
+    "jsx": "react",
+    "noEmit": true,
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "packages/host/node_modules/@types",
+      "packages/design-system/node_modules/@types"
+    ],
+    "esModuleInterop": true,
+    "paths": {
+      "@dsTypes/*": [
+        "./packages/host/@mf-types/DesignSystem/_types/*",
+      ],
+      "@hostTypes/*": [
+        "./packages/design-system/@mf-types/Host/*",
+      ]
+    },
+    "types": ["@testing-library/jest-dom", "cypress", "@testing-library/cypress"]
+  },
+  "exclude": [".vscode", "node_modules/*", "**/node_modules/*", "**/dist/*", "**/*.cy.tsx"],
+  "include": [
+    "packages/host/src/**/*",
+    "packages/design-system/src/**/*"
+  ]
+}

@@ -3,7 +3,7 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { FederatedTypesPlugin } = require("@module-federation/typescript");
 const dotenv = require("dotenv").config({
-  path: path.join(__dirname, "../.env"),
+  path: path.join(__dirname, "../../../.env"),
 });
 
 const federationConfig = require("./federationConfig");
@@ -20,7 +20,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|ts)x?$/, // add |ts
+        test: /\.(js|ts)x?$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -52,7 +52,7 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: "public/index.html",
-      title: "SWAPI Web Client",
+      title: "SWAPI Web Client HOST", 
       filename: "index.html",
       chunks: ["main"],
     }),

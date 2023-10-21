@@ -4,7 +4,10 @@ const federationConfig = (REMOTE_URL) => {
   return {
     name: "Host",
     filename: "remoteEntry.js",
-
+    exposes: {
+      './ReduxHooks': './src/redux/hooks',
+      './SwapiSlice': './src/redux/slices/swapi/swapiSlice.ts'
+    },
     remotes: {
       DesignSystem: `DesignSystem@${REMOTE_URL}/remoteEntry.js`,
     },
