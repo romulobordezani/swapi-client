@@ -1,7 +1,7 @@
 {
-  "name": "remote",
+  "name": "design-system",
   "version": "1.0.0",
-  "description": "remote package",
+  "description": "Design System package",
   "main": "./src/index.js",
   "author": "romulobordezani",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "build": "webpack --progress --config configs/webpack.prod.js",
     "serve": "webpack serve --config configs/webpack.dev.js",
     "dev": "npm-run-all --parallel start serve",
-    "test": "jest ",
+    "test": "jest",
     "tscheck": "tsc"
   },
   "devDependencies": {

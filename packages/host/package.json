@@ -1,7 +1,7 @@
 {
   "name": "host",
   "version": "1.0.0",
-  "description": "host project for import remote package",
+  "description": "SWAPi - Web View using module federation ",
   "main": "./src/index.js",
   "author": "romulobordezani",
   "license": "MIT",

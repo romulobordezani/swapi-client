@@ -14,7 +14,7 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "@mfTypes/*": ["./@mf-types/Remote/_types/*"]
+      "@mfTypes/*": ["./@mf-types/DesignSystem/_types/*"]
     },
     "types": ["@testing-library/jest-dom", "cypress", "@testing-library/cypress"]
   },

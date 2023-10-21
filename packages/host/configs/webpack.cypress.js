@@ -37,7 +37,7 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
     alias: {
-      'Remote/Button': path.resolve(__dirname, '../../remote/src/components/Button'),
+      'DesignSystem/Button': path.resolve(__dirname, '../../design-system/src/components/Button'),
     },
   },
 };

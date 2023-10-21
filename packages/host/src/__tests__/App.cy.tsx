@@ -5,6 +5,6 @@ import { mount } from 'cypress/react18';
 describe('App', () => {
   it('should have remote button', async () => {
     mount(<App />);
-    cy.findByRole('button', { name: 'Remote button' }).should('exist');
+    cy.findByRole('button', { name: 'DS button' }).should('exist');
   });
 });

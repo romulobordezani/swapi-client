@@ -6,6 +6,6 @@ import App from './App';
 describe('App', () => {
   it('should have remote button', async () => {
     render(<App />);
-    expect(await screen.findByRole('button', { name: 'Remote button' })).toBeInTheDocument();
+    expect(await screen.findByRole('button', { name: 'DS button' })).toBeInTheDocument();
   });
 });

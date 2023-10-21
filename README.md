@@ -35,11 +35,11 @@ yarn test
 ### Running Host React Testing Library tests through Jest
 
 This is achieved using jest's moduleNameMapper by telling it how to resolve remote imports.
-Add remote components at the list following the pattern bellow in the file `jest.config.js`:
+Add Design System components at the list following the pattern bellow in the file `jest.config.js`:
 
 ```javascript
   moduleNameMapper: {
-    'Remote/Button': '<rootDir>/../remote/src/components/Button',
+    'DesignSystem/Button': '<rootDir>/../design-system/src/components/Button',
   }
 ```
 
@@ -50,5 +50,5 @@ This is achieved using webpack's `resolve.alias` by telling it how to resolve re
 
 ## FederationConfig
 
-- For more settings, you can access federationConfig from path packages/[host or remote]/configs/federationConfig.js
+- For more settings, you can access federationConfig from path packages/[host or design-system]/configs/federationConfig.js
 

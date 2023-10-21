@@ -6,7 +6,7 @@ const federationConfig = (REMOTE_URL) => {
     filename: "remoteEntry.js",
 
     remotes: {
-      Remote: `Remote@${REMOTE_URL}/remoteEntry.js`,
+      DesignSystem: `DesignSystem@${REMOTE_URL}/remoteEntry.js`,
     },
     shared: {
       ...dependencies,

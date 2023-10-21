@@ -1,7 +1,7 @@
 import React from 'react';
 import RemoteButtonProps from '@mfTypes/Button';
 
-const RemoteButton = React.lazy(() => import('Remote/Button')) as typeof RemoteButtonProps;
+const RemoteButton = React.lazy(() => import('DesignSystem/Button')) as typeof RemoteButtonProps;
 
 import ErrorBoundary from './ErrorBoundary';
 
@@ -9,9 +9,9 @@ const App = () => {
   return (
     <div>
       <h1>Host Website</h1>
-      <h2>this button was imported from Remote:</h2>
+      <h2>this button was imported from Design System:</h2>
       <ErrorBoundary>
-        <RemoteButton name="host-button">Remote button</RemoteButton>
+        <RemoteButton name="host-button">DS button</RemoteButton>
       </ErrorBoundary>
     </div>
   );

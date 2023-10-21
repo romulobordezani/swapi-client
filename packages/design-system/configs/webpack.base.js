@@ -43,7 +43,7 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: "public/index.html",
-      title: "Remote App",
+      title: "SWAPI Design System",
       filename: "index.html",
       chunks: ["main"],
     }),

@@ -52,7 +52,7 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: "public/index.html",
-      title: "Host App",
+      title: "SWAPI Web Client",
       filename: "index.html",
       chunks: ["main"],
     }),
