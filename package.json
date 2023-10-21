@@ -1,0 +1,29 @@
+{
+  "name": "swapi-client",
+  "version": "0.0.1",
+  "description": "Web Client for SWAPI - The Star Wars API",
+  "private": false,
+  "scripts": {
+    "build": "yarn workspaces run build",
+    "test": "wsrun --parallel test",
+    "serve": "wsrun --parallel serve",
+    "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/romulobordezani/swapi-client.git"
+  },
+  "author": "romulobordezani",
+  "engines": {
+    "node": ">=18.12.1"
+  },
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "concurrently": "7.6.0",
+    "wsrun": "5.2.4"
+  },
+  "packageManager": "yarn@1.22.19"
+}
