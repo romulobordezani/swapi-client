@@ -1,5 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-nocheck
-import React from "react";
+import React from 'react';
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
@@ -8,6 +9,7 @@ class ErrorBoundary extends React.Component {
 
   static getDerivedStateFromError(error) {
     // Update state so the next render will show the fallback UI.
+    console.error(error);
     return { hasError: true };
   }
 

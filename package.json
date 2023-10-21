@@ -2,10 +2,12 @@
   "name": "swapi-client",
   "version": "0.0.1",
   "description": "Web Client for SWAPI - The Star Wars API",
-  "private": false,
+  "private": true,
   "scripts": {
     "build": "yarn workspaces run build",
     "test": "wsrun --parallel test",
+    "lint": "eslint \"packages/**/*.ts{,x}\" --fix",
+    "prettier-format": "prettier --config .prettierrc 'packages/**/*.ts' --write",
     "serve": "wsrun --parallel serve",
     "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\""
   },
