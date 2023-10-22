@@ -4,7 +4,7 @@
     "rootDirs": ["packages/host", "packages/design-system"],
     "module": "umd",
     "lib": ["ESNext", "dom"],
-    "jsx": "react",
+    "jsx": "react-jsx",
     "noEmit": true,
     "sourceMap": true,
     "strict": true,
