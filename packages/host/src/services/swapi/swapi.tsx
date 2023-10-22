@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { ResourceType, Film, PagedResults, Vehicle, People, Planet, Species, Starship, SearchResult } from '../types';
+import { ResourceType, Film, PagedResults, Vehicle, People, Planet, Species, Starship, SearchResult } from './types';
 
 export const swapiV2 = createApi({
   reducerPath: `swapi_api`,

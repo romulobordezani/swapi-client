@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { css } from '@emotion/react';
 
-import { useSearchVehiclesQuery } from '../redux/hooks';
+import { useSearchStarshipsQuery } from '../redux/hooks';
 import Button from 'DesignSystem/Button';
 
 export const ApiTest = () => {
   const [page, setPage] = useState(1);
-  const { data, error, isLoading, isFetching } = useSearchVehiclesQuery({
+  const { data, error, isLoading, isFetching } = useSearchStarshipsQuery({
     page,
-    search: 'a'
+    search: 'falcon'
   });
 
   if (error) {
@@ -33,7 +33,7 @@ export const ApiTest = () => {
     );
   }
 
-  if (!data?.results) {
+  if (!data?.results || !data?.results.length) {
     return (
       <div
         css={css`

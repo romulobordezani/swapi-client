@@ -25,6 +25,7 @@ export const {
   useGetStarshipByIdQuery,
   useListStarshipsQuery,
   useLazySearchStarshipsQuery,
+  useSearchStarshipsQuery,
 
   useGetVehicleByIdQuery,
   useListVehiclesQuery,
