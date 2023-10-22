@@ -4,7 +4,6 @@
     "rootDirs": ["packages/host", "packages/design-system"],
     "module": "umd",
     "lib": ["ESNext", "dom"],
-    "jsx": "react-jsx",
     "noEmit": true,
     "sourceMap": true,
     "strict": true,
@@ -12,6 +11,7 @@
     "strictNullChecks": true,
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports" : true,
     "baseUrl": ".",
     "typeRoots": [
       "node_modules/@types",
@@ -21,14 +21,13 @@
     "esModuleInterop": true,
     "paths": {
       "@dsTypes/*": [
-        "./packages/host/@mf-types/DesignSystem/_types/*",
+        "./packages/host/@mf-types/DesignSystem/_types/*"
       ],
       "@hostTypes/*": [
-        "./packages/design-system/@mf-types/Host/_types/*",
+        "./packages/design-system/@mf-types/Host/_types/*"
       ]
     },
-    
-    
+    "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
     "types": [
       "@testing-library/jest-dom",

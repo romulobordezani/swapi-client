@@ -9,7 +9,8 @@ module.exports = {
     '**/*.json',
     '**/*.config.*',
     '**/config/**.*',
-    '**/@mf-types/**.*'
+    '**/@mf-types/**.*',
+    '**/node_modules/**.*'
   ],
   rules: {
     '@typescript-eslint/no-explicit-any': 'off',

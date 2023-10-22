@@ -47,7 +47,7 @@ module.exports = {
                     sourceMap: true,
                     autoLabel: "dev-only",
                     labelFormat: "[local]",
-                    cssPropOptimization: true,
+                    cssPropOptimization: true
                 },
               ],
             ],

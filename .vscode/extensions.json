@@ -3,6 +3,7 @@
     "dbaeumer.vscode-eslint",
     "firsttris.vscode-jest-runner",
     "humao.rest-client",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "styled-components.vscode-styled-components"
   ]
 }

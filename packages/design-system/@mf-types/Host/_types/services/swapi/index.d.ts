@@ -1,1 +1,1 @@
-export * from './swapiGateway';
+export * from './swapi';

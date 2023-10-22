@@ -3,10 +3,10 @@ import { Provider } from 'react-redux';
 import { Global, css } from '@emotion/react';
 import emotionNormalize from 'emotion-normalize';
 
-import RemoteButton from 'DesignSystem/Button';
 import globalStyle from 'DesignSystem/GlobalStyle';
 import ErrorBoundary from './ErrorBoundary';
 import { store } from './redux/store';
+import { ApiTest } from './components/ApiTest';
 
 const App = () => {
   return (
@@ -18,7 +18,7 @@ const App = () => {
       />
       <Provider store={store}>
         <ErrorBoundary>
-          <RemoteButton name="host-button">DS button</RemoteButton>
+          <ApiTest />
         </ErrorBoundary>
       </Provider>
     </>

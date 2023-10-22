@@ -10,7 +10,9 @@
     "prettier-format": "prettier --config .prettierrc 'packages/**/*.ts' --write",
     "serve": "wsrun --parallel serve",
     "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\"",
-    "lists": "tsc"
+    "lists": "tsc",
+    "clean": "rm -rf ./node_modules && rm -rf ./packages/host/node_modules && rm -rf ./packages/design-system/node_modules",
+    "generate-env-file": "echo \"REMOTE_URL=http://localhost:4000 \r\nHOST_URL=http://localhost:3000 \" > .env"
   },
   "repository": {
     "type": "git",

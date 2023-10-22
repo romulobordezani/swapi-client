@@ -1,8 +1,4 @@
 import { FC, ReactNode } from 'react';
-
-import { useAppSelector, useAppDispatch } from 'Host/ReduxHooks';
-import { increment, selectCount } from 'Host/SwapiSlice';
-
 import buttonStyle from './Button.style';
 
 export interface ButtonProps {
@@ -10,13 +6,10 @@ export interface ButtonProps {
   name: string;
 }
 
-const Button: FC<ButtonProps> = ({ children, name }) => {
-  const count = useAppSelector(selectCount);
-  const dispatch = useAppDispatch();
-
+const Button: FC<ButtonProps> = ({ children, name, ...props }) => {
   return (
-    <button css={buttonStyle} name={name} onClick={() => dispatch(increment())}>
-      {children} {count}
+    <button css={buttonStyle} name={name} {...props}>
+      {children}
     </button>
   );
 };
