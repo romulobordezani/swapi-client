@@ -6,7 +6,8 @@ const federationConfig = (HOST_URL) => {
     name: 'DesignSystem',
     filename: 'remoteEntry.js',
     exposes: {
-      './Button': './src/components/Button/Button.tsx'
+      './Button': './src/components/Button/Button.tsx',
+      './GlobalStyle': './src/global.style.ts'
     },
     remotes: {
       Host: `Host@${HOST_URL}/remoteEntry.js`

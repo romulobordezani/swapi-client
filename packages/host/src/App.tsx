@@ -1,23 +1,27 @@
 import React from 'react';
-// import RemoteButtonProps from '@dsTypes/Button';
 import { Provider } from 'react-redux';
-
-// const RemoteButton = React.lazy(() => import('DesignSystem/Button')) as typeof RemoteButtonProps;
+import { Global, css } from '@emotion/react';
+import emotionNormalize from 'emotion-normalize';
 
 import RemoteButton from 'DesignSystem/Button';
-
+import globalStyle from 'DesignSystem/GlobalStyle';
 import ErrorBoundary from './ErrorBoundary';
 import { store } from './redux/store';
 
 const App = () => {
   return (
-    <Provider store={store}>
-      <h1>Host Website</h1>
-      <h2>this button was imported from Design System:</h2>
-      <ErrorBoundary>
-        <RemoteButton name="host-button">DS button</RemoteButton>
-      </ErrorBoundary>
-    </Provider>
+    <>
+      <Global
+        styles={css`
+          ${emotionNormalize} ${globalStyle}
+        `}
+      />
+      <Provider store={store}>
+        <ErrorBoundary>
+          <RemoteButton name="host-button">DS button</RemoteButton>
+        </ErrorBoundary>
+      </Provider>
+    </>
   );
 };
 

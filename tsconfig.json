@@ -27,7 +27,15 @@
         "./packages/design-system/@mf-types/Host/_types/*",
       ]
     },
-    "types": ["@testing-library/jest-dom", "cypress", "@testing-library/cypress"]
+    
+    
+    "jsxImportSource": "@emotion/react",
+    "types": [
+      "@testing-library/jest-dom",
+      "cypress",
+      "@testing-library/cypress",
+      "@emotion/react/types/css-prop"
+    ],
   },
   "exclude": [".vscode", "node_modules/*", "**/node_modules/*", "**/dist/*", "**/*.cy.tsx"],
   "include": [
