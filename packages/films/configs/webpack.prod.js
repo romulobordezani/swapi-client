@@ -4,19 +4,19 @@ const webpackBaseConfig = require("./webpack.base");
 
 // @ts-ignore
 module.exports = merge(webpackBaseConfig, {
-  mode: "development",
-  devtool: "eval",
-  cache: false,
+  mode: "production",
+  devtool: "cheap-source-map",
+
+  cache: true,
   optimization: {
-    minimize: false,
+    minimize: true,
   },
   devServer: {
     static: {
       directory: path.join(__dirname, "../dist"),
     },
-    port: 3000,
-    hot: true,
-    compress: false,
+    port: 4001,
+    compress: true,
     historyApiFallback: true,
   },
 });

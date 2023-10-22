@@ -1,7 +1,7 @@
 /* eslint-env node */
 const { dependencies } = require("../package.json");
 
-const federationConfig = (REMOTE_URL) => {
+const federationConfig = (DS_URL, FILMS_URL) => {
   return {
     name: "Host",
     filename: "remoteEntry.js",
@@ -10,7 +10,8 @@ const federationConfig = (REMOTE_URL) => {
       './ReduxStore': './src/redux/store.ts',
     },
     remotes: {
-      DesignSystem: `DesignSystem@${REMOTE_URL}/remoteEntry.js`,
+      DesignSystem: `DesignSystem@${DS_URL}/remoteEntry.js`,
+      Films: `Films@${FILMS_URL}/remoteEntry.js`
     },
     shared: {
       ...dependencies,

@@ -47,11 +47,10 @@ module.exports = {
                     sourceMap: true,
                     autoLabel: "dev-only",
                     labelFormat: "[local]",
-                    cssPropOptimization: true,
+                    cssPropOptimization: true
                 },
               ],
             ],
-            
           },
         },
       },
@@ -63,15 +62,15 @@ module.exports = {
       "process.env": dotenv.parsed,
     }),
     new FederatedTypesPlugin({
-      federationConfig: federationConfig(process.env.DS_URL, process.env.FILMS_URL),
+      federationConfig: federationConfig(process.env.HOST_URL, process.env.DS_URL),
     }),
 
     new HtmlWebpackPlugin({
       template: "public/index.html",
-      title: "SWAPI Web Client HOST",
+      title: "SWAPI Design System",
       filename: "index.html",
       chunks: ["main"],
-    })
+    }),
   ],
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
