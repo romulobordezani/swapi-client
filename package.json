@@ -2,6 +2,7 @@
   "name": "swapi-client",
   "version": "0.0.1",
   "description": "Web Client for SWAPI - The Star Wars API",
+  "homepage": "https://swapi-client-git-main-romulobordezani.vercel.app",
   "private": true,
   "scripts": {
     "build": "yarn workspaces run build",
