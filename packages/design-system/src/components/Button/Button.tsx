@@ -3,7 +3,8 @@ import buttonStyle from './Button.style';
 
 export interface ButtonProps {
   children: ReactNode;
-  name: string;
+  name?: string;
+  [key: string]: any;
 }
 
 const Button: FC<ButtonProps> = ({ children, name, ...props }) => {

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import StormTrooper from './assets/storm-min.svg';
 import { header, logo_group, logo_group__icon, logo_group__type, header__nav } from './Header.style';
@@ -7,13 +7,6 @@ import { FaJedi, FaRocket, FaTruck } from 'react-icons/fa';
 import { RiEmpathizeFill, RiPlanetFill, RiAliensFill, RiClapperboardFill } from 'react-icons/ri';
 
 function Header() {
-  let pathname = window.location.pathname;
-
-  useEffect(() => {
-    pathname = window.location.pathname;
-    console.log(pathname);
-  }, [window.location.pathname]);
-
   return (
     <div css={header}>
       <div css={logo_group}>

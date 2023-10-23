@@ -9,6 +9,7 @@ const federationConfig = (HOST_URL) => {
       './Button': './src/components/Button/Button.tsx',
       './Footer': './src/components/Footer/Footer.tsx',
       './Header': './src/components/Header/Header.tsx',
+      './PaginableContainer': './src/components/PaginableContainer/PaginableContainer.tsx',
       './GlobalStyle': './src/global.style.ts'
     },
     remotes: {

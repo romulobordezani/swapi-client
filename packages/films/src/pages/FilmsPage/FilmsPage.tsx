@@ -1,15 +1,21 @@
-import React from 'react';
-import ButtonProps from '@dsTypes/Button';
+import React, { useState } from 'react';
+import PaginableContainerProps from '@dsTypes/PaginableContainer';
+import { useSearchFilmsQuery } from 'Host/ReduxHooks';
+import { Displayer } from './FilmsDisplayer';
 
-const Button = React.lazy(async () => import('DesignSystem/Button')) as typeof ButtonProps;
+const PaginableContainer = React.lazy(
+  async () => import('DesignSystem/PaginableContainer')
+) as typeof PaginableContainerProps;
 
 export const FilmsPage = () => {
-  return (
-    <div>
-      Films Page
-      <Button name="remote-button">Works! 🍀</Button>
-    </div>
-  );
+  const [page, setPage] = useState<number>(1);
+
+  const { data, error, isLoading, isFetching } = useSearchFilmsQuery({
+    page,
+    search: 'a'
+  });
+
+  return <PaginableContainer {...{ data, error, isLoading, isFetching, page, setPage, Displayer }} />;
 };
 
 export default FilmsPage;

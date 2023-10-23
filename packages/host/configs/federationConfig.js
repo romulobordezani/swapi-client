@@ -8,6 +8,7 @@ const federationConfig = (DS_URL, FILMS_URL) => {
     exposes: {
       './ReduxHooks': './src/redux/hooks.ts', 
       './ReduxStore': './src/redux/store.ts',
+      './SwapiTypes': './src/services/swapi/types'
     },
     remotes: {
       DesignSystem: `DesignSystem@${DS_URL}/remoteEntry.js`,

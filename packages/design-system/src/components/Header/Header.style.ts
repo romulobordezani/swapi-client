@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { swYellow } from '../../theme/colors.constant';
 
 export const header = css`
   width: 100%;
@@ -36,13 +37,15 @@ export const logo_group__type = css`
 
 export const header__nav = css`
   padding: 20px 20px 20px 0;
+
   ul {
     width: 100%;
+
     li {
       display: inline-block;
       list-style: none;
-
       margin-right: 10px;
+
       a {
         font-size: 20px;
         text-decoration: none;
@@ -59,9 +62,10 @@ export const header__nav = css`
           padding-right: 5px;
         }
       }
+
       a.active {
         transition: background-color 0.7s ease-in;
-        background: #ffe81f;
+        background: ${swYellow};
         color: #000000;
       }
     }

@@ -9,6 +9,7 @@ export const {
   useGetFilmByIdQuery,
   useListFilmsQuery,
   useLazySearchFilmsQuery,
+  useSearchFilmsQuery,
 
   useGetPeopleByIdQuery,
   useListPeopleQuery,
