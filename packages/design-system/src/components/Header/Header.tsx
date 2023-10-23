@@ -62,7 +62,7 @@ function Header() {
           </li>
           <li>
             <NavLink
-              to="/starship"
+              to="/starships"
               className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'active' : '')}
             >
               <FaRocket />
@@ -71,7 +71,7 @@ function Header() {
           </li>
           <li>
             <NavLink
-              to="/vehicle"
+              to="/vehicles"
               className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'active' : '')}
             >
               <FaTruck />

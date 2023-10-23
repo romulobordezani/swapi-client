@@ -1,5 +1,11 @@
 {
-  "rewrites":  [
-    {"source": "/(.*)", "destination": "/"}
+  "routes": [
+    { "src": "/", "dest": "/" },
+    { "src": "/films", "dest": "/" },
+    { "src": "/people", "dest": "/" },
+    { "src": "/planets", "dest": "/" },
+    { "src": "/species", "dest": "/" },
+    { "src": "/starships", "dest": "/" },
+    { "src": "/vehicles", "dest": "/" }
   ]
 }
