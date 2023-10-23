@@ -1,11 +1,11 @@
 {
-  "routes": [
-    { "src": "/", "dest": "/" },
-    { "src": "/films", "dest": "/" },
-    { "src": "/people", "dest": "/" },
-    { "src": "/planets", "dest": "/" },
-    { "src": "/species", "dest": "/" },
-    { "src": "/starships", "dest": "/" },
-    { "src": "/vehicles", "dest": "/" }
+  "rewrites": [
+    { "source": "/", "destination": "/" },
+    { "source": "/films", "destination": "/" },
+    { "source": "/people", "destination": "/" },
+    { "source": "/planets", "destination": "/" },
+    { "source": "/species", "destination": "/" },
+    { "source": "/starships", "destination": "/" },
+    { "source": "/vehicles", "destination": "/" }
   ]
 }
