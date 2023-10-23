@@ -55,6 +55,14 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.svg/,
+        type: 'asset/inline'
+      },
+      {
+        test: /\.png/,
+        type: 'asset/resource'
+      }
     ],
   },
 
@@ -67,10 +75,12 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
+      favicon: "public/favicon.ico",
       template: "public/index.html",
       title: "SWAPI Web Client HOST",
       filename: "index.html",
       chunks: ["main"],
+      // manifest: "./public/manifest.json",
     })
   ],
   resolve: {

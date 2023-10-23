@@ -2,7 +2,6 @@ const path = require("path");
 const { merge } = require("webpack-merge");
 const webpackBaseConfig = require("./webpack.base");
 
-// @ts-ignore
 module.exports = merge(webpackBaseConfig, {
   mode: "development",
   devtool: "eval",

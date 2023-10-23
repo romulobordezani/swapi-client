@@ -12,21 +12,12 @@
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports" : true,
-    "baseUrl": ".",
     "typeRoots": [
       "node_modules/@types",
       "packages/host/node_modules/@types",
       "packages/design-system/node_modules/@types"
     ],
     "esModuleInterop": true,
-    "paths": {
-      "@dsTypes/*": [
-        "./packages/host/@mf-types/DesignSystem/_types/*"
-      ],
-      "@hostTypes/*": [
-        "./packages/design-system/@mf-types/Host/_types/*"
-      ]
-    },
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
     "types": [
@@ -34,11 +25,11 @@
       "cypress",
       "@testing-library/cypress",
       "@emotion/react/types/css-prop"
-    ],
+    ]
   },
   "exclude": [".vscode", "node_modules/*", "**/node_modules/*", "**/dist/*", "**/*.cy.tsx"],
   "include": [
-    "packages/host/**/*",
-    "packages/design-system/**/*"
+    "packages/**/*",
+    "custom.d.ts"
   ]
 }

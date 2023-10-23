@@ -8,6 +8,12 @@ const globalStyle = css`
     background: white;
     min-height: 100%;
     font-family: Helvetica, Arial, sans-serif;
+    background: #111111;
+    color: #ffffff;
+
+    a {
+      color: #ffffff;
+    }
   }
 `;
 

@@ -54,6 +54,14 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.svg/,
+        type: 'asset/inline'
+      },
+      {
+        test: /\.png/,
+        type: 'asset/resource'
+      }
     ],
   },
 

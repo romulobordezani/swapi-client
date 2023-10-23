@@ -29,12 +29,6 @@ const buttonStyle = css`
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-
-  :hover {
-  }
-
-  :active {
-  }
 `;
 
 export default buttonStyle;

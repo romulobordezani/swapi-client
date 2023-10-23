@@ -1,3 +1,13 @@
 {
-  "extends": "../../tsconfig.json"
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@dsTypes/*": [
+        "./@mf-types/DesignSystem/*"
+      ],
+      "@hostTypes/*": [
+        "./@mf-types/Host/*"
+      ]
+    }
+  }
 }

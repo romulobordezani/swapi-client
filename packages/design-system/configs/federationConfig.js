@@ -7,6 +7,8 @@ const federationConfig = (HOST_URL) => {
     filename: 'remoteEntry.js',
     exposes: {
       './Button': './src/components/Button/Button.tsx',
+      './Footer': './src/components/Footer/Footer.tsx',
+      './Header': './src/components/Header/Header.tsx',
       './GlobalStyle': './src/global.style.ts'
     },
     remotes: {
@@ -21,7 +23,11 @@ const federationConfig = (HOST_URL) => {
       'react-dom': {
         singleton: true,
         requiredVersion: dependencies['react-dom']
-      }
+      },
+      'react-router-dom': {
+        singleton: true,
+        requiredVersion: dependencies['react-router-dom']
+      },
     }
   }
 };
