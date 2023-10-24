@@ -1,8 +1,7 @@
 import { FC } from 'react';
 import { css } from '@emotion/react';
 
-import Button from '../Button/Button';
-import Loader from '../Loader/Loader';
+import { Button, Loader } from '../';
 
 export interface PaginableContainerProps {
   data:
@@ -20,7 +19,7 @@ export interface PaginableContainerProps {
   Displayer: React.ComponentType<any>;
 }
 
-const PaginableContainer: FC<PaginableContainerProps> = ({
+export const PaginableContainer: FC<PaginableContainerProps> = ({
   data,
   error,
   isFetching,
@@ -85,5 +84,3 @@ const PaginableContainer: FC<PaginableContainerProps> = ({
     </div>
   );
 };
-
-export default PaginableContainer;

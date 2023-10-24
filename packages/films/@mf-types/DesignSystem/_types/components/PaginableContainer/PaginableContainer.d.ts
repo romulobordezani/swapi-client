@@ -12,5 +12,4 @@ export interface PaginableContainerProps {
     page: number;
     Displayer: React.ComponentType<any>;
 }
-declare const PaginableContainer: FC<PaginableContainerProps>;
-export default PaginableContainer;
+export declare const PaginableContainer: FC<PaginableContainerProps>;

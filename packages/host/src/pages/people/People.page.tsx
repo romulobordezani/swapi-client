@@ -1,20 +1,30 @@
-import React, { useState } from 'react';
-import PaginableContainerProps from '@dsTypes/PaginableContainer';
-import { useListPeopleQuery } from '../../redux/hooks';
+import React, { FC, useEffect, useState } from 'react';
+import { useSearchPeopleQuery } from '../../redux/hooks';
 import { Displayer } from './PeopleDisplayer';
+import { useDebounce } from 'DesignSystem/Hooks';
 
-const PaginableContainer = React.lazy(
-  async () => import('DesignSystem/PaginableContainer')
-) as typeof PaginableContainerProps;
+import { PaginableContainer, SearchForm } from 'DesignSystem/Components';
 
-export const PeoplePage = () => {
+export const PeoplePage: FC = () => {
   const [page, setPage] = useState<number>(1);
+  const [search, setSearch] = useState<string>('');
+  const debouncedSearchTerm = useDebounce(search, 1000);
 
-  const { data, error, isLoading, isFetching } = useListPeopleQuery({
-    page
+  useEffect(() => {
+    if (search !== '') {
+      setPage(1);
+    }
+  }, [search]);
+
+  const { data, error, isLoading, isFetching } = useSearchPeopleQuery({
+    page,
+    search: debouncedSearchTerm
   });
 
-  return <PaginableContainer {...{ data, error, isLoading, isFetching, page, setPage, Displayer }} />;
+  return (
+    <>
+      <SearchForm {...{ setSearch }} />
+      <PaginableContainer {...{ data, error, isLoading, isFetching, page, setPage, Displayer }} />
+    </>
+  );
 };
-
-export default PeoplePage;

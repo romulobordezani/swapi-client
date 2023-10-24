@@ -7,12 +7,10 @@ export interface ButtonProps {
   [key: string]: any;
 }
 
-const Button: FC<ButtonProps> = ({ children, name, ...props }) => {
+export const Button: FC<ButtonProps> = ({ children, name, ...props }) => {
   return (
     <button css={buttonStyle} name={name} {...props}>
       {children}
     </button>
   );
 };
-
-export default Button;

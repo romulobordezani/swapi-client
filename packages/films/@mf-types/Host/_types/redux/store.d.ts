@@ -18,25 +18,33 @@ export declare const store: import("@reduxjs/toolkit/dist/configureStore").Toolk
             search: string;
         }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").SearchResult<import("../services/swapi/types").People>, "swapi_api">;
         getPlanetById: import("@reduxjs/toolkit/query").QueryDefinition<number, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").Planet, "swapi_api">;
-        listPlanets: import("@reduxjs/toolkit/query").QueryDefinition<number | void, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Planet>, "swapi_api">;
+        listPlanets: import("@reduxjs/toolkit/query").QueryDefinition<{
+            page: number;
+        } | undefined, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Planet>, "swapi_api">;
         searchPlanets: import("@reduxjs/toolkit/query").QueryDefinition<{
             page: number;
             search: string;
         }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").SearchResult<import("../services/swapi/types").Planet>, "swapi_api">;
         getSpecieById: import("@reduxjs/toolkit/query").QueryDefinition<number, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").Species, "swapi_api">;
-        listSpecies: import("@reduxjs/toolkit/query").QueryDefinition<number | void, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Species>, "swapi_api">;
+        listSpecies: import("@reduxjs/toolkit/query").QueryDefinition<{
+            page: number;
+        } | undefined, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Species>, "swapi_api">;
         searchSpecies: import("@reduxjs/toolkit/query").QueryDefinition<{
             page: number;
             search: string;
         }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").SearchResult<import("../services/swapi/types").Species>, "swapi_api">;
         getStarshipById: import("@reduxjs/toolkit/query").QueryDefinition<number, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").Starship, "swapi_api">;
-        listStarships: import("@reduxjs/toolkit/query").QueryDefinition<number | void, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Starship>, "swapi_api">;
+        listStarships: import("@reduxjs/toolkit/query").QueryDefinition<{
+            page: number;
+        } | undefined, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Starship>, "swapi_api">;
         searchStarships: import("@reduxjs/toolkit/query").QueryDefinition<{
             page: number;
             search: string;
         }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").SearchResult<import("../services/swapi/types").Starship>, "swapi_api">;
         getVehicleById: import("@reduxjs/toolkit/query").QueryDefinition<number, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").Vehicle, "swapi_api">;
-        listVehicles: import("@reduxjs/toolkit/query").QueryDefinition<number | void, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Vehicle>, "swapi_api">;
+        listVehicles: import("@reduxjs/toolkit/query").QueryDefinition<{
+            page: number;
+        } | undefined, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Vehicle>, "swapi_api">;
         searchVehicles: import("@reduxjs/toolkit/query").QueryDefinition<{
             page: number;
             search: string;
@@ -61,25 +69,33 @@ export declare const store: import("@reduxjs/toolkit/dist/configureStore").Toolk
             search: string;
         }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").SearchResult<import("../services/swapi/types").People>, "swapi_api">;
         getPlanetById: import("@reduxjs/toolkit/query").QueryDefinition<number, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").Planet, "swapi_api">;
-        listPlanets: import("@reduxjs/toolkit/query").QueryDefinition<number | void, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Planet>, "swapi_api">;
+        listPlanets: import("@reduxjs/toolkit/query").QueryDefinition<{
+            page: number;
+        } | undefined, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Planet>, "swapi_api">;
         searchPlanets: import("@reduxjs/toolkit/query").QueryDefinition<{
             page: number;
             search: string;
         }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").SearchResult<import("../services/swapi/types").Planet>, "swapi_api">;
         getSpecieById: import("@reduxjs/toolkit/query").QueryDefinition<number, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").Species, "swapi_api">;
-        listSpecies: import("@reduxjs/toolkit/query").QueryDefinition<number | void, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Species>, "swapi_api">;
+        listSpecies: import("@reduxjs/toolkit/query").QueryDefinition<{
+            page: number;
+        } | undefined, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Species>, "swapi_api">;
         searchSpecies: import("@reduxjs/toolkit/query").QueryDefinition<{
             page: number;
             search: string;
         }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").SearchResult<import("../services/swapi/types").Species>, "swapi_api">;
         getStarshipById: import("@reduxjs/toolkit/query").QueryDefinition<number, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").Starship, "swapi_api">;
-        listStarships: import("@reduxjs/toolkit/query").QueryDefinition<number | void, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Starship>, "swapi_api">;
+        listStarships: import("@reduxjs/toolkit/query").QueryDefinition<{
+            page: number;
+        } | undefined, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Starship>, "swapi_api">;
         searchStarships: import("@reduxjs/toolkit/query").QueryDefinition<{
             page: number;
             search: string;
         }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").SearchResult<import("../services/swapi/types").Starship>, "swapi_api">;
         getVehicleById: import("@reduxjs/toolkit/query").QueryDefinition<number, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").Vehicle, "swapi_api">;
-        listVehicles: import("@reduxjs/toolkit/query").QueryDefinition<number | void, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Vehicle>, "swapi_api">;
+        listVehicles: import("@reduxjs/toolkit/query").QueryDefinition<{
+            page: number;
+        } | undefined, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Vehicle>, "swapi_api">;
         searchVehicles: import("@reduxjs/toolkit/query").QueryDefinition<{
             page: number;
             search: string;
@@ -103,25 +119,33 @@ export declare const store: import("@reduxjs/toolkit/dist/configureStore").Toolk
         search: string;
     }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").SearchResult<import("../services/swapi/types").People>, "swapi_api">;
     getPlanetById: import("@reduxjs/toolkit/query").QueryDefinition<number, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").Planet, "swapi_api">;
-    listPlanets: import("@reduxjs/toolkit/query").QueryDefinition<number | void, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Planet>, "swapi_api">;
+    listPlanets: import("@reduxjs/toolkit/query").QueryDefinition<{
+        page: number;
+    } | undefined, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Planet>, "swapi_api">;
     searchPlanets: import("@reduxjs/toolkit/query").QueryDefinition<{
         page: number;
         search: string;
     }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").SearchResult<import("../services/swapi/types").Planet>, "swapi_api">;
     getSpecieById: import("@reduxjs/toolkit/query").QueryDefinition<number, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").Species, "swapi_api">;
-    listSpecies: import("@reduxjs/toolkit/query").QueryDefinition<number | void, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Species>, "swapi_api">;
+    listSpecies: import("@reduxjs/toolkit/query").QueryDefinition<{
+        page: number;
+    } | undefined, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Species>, "swapi_api">;
     searchSpecies: import("@reduxjs/toolkit/query").QueryDefinition<{
         page: number;
         search: string;
     }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").SearchResult<import("../services/swapi/types").Species>, "swapi_api">;
     getStarshipById: import("@reduxjs/toolkit/query").QueryDefinition<number, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").Starship, "swapi_api">;
-    listStarships: import("@reduxjs/toolkit/query").QueryDefinition<number | void, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Starship>, "swapi_api">;
+    listStarships: import("@reduxjs/toolkit/query").QueryDefinition<{
+        page: number;
+    } | undefined, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Starship>, "swapi_api">;
     searchStarships: import("@reduxjs/toolkit/query").QueryDefinition<{
         page: number;
         search: string;
     }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").SearchResult<import("../services/swapi/types").Starship>, "swapi_api">;
     getVehicleById: import("@reduxjs/toolkit/query").QueryDefinition<number, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").Vehicle, "swapi_api">;
-    listVehicles: import("@reduxjs/toolkit/query").QueryDefinition<number | void, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Vehicle>, "swapi_api">;
+    listVehicles: import("@reduxjs/toolkit/query").QueryDefinition<{
+        page: number;
+    } | undefined, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Vehicle>, "swapi_api">;
     searchVehicles: import("@reduxjs/toolkit/query").QueryDefinition<{
         page: number;
         search: string;

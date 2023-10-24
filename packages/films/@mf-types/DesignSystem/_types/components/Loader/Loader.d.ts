@@ -1,2 +1,2 @@
-declare function Loader(): import("@emotion/react/jsx-runtime").JSX.Element;
-export default Loader;
+import { FC } from 'react';
+export declare const Loader: FC;

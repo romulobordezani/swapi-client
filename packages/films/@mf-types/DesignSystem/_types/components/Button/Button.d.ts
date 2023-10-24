@@ -4,5 +4,4 @@ export interface ButtonProps {
     name?: string;
     [key: string]: any;
 }
-declare const Button: FC<ButtonProps>;
-export default Button;
+export declare const Button: FC<ButtonProps>;

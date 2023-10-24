@@ -1,14 +1,11 @@
+import { FC } from 'react';
 import { loader, wrapper } from './Loader.style';
 
-function Loader() {
-  return (
-    <div css={wrapper}>
-      <div css={loader}>
-        <div></div>
-        <div></div>
-      </div>
+export const Loader: FC = () => (
+  <div css={wrapper}>
+    <div css={loader}>
+      <div></div>
+      <div></div>
     </div>
-  );
-}
-
-export default Loader;
+  </div>
+);

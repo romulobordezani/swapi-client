@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { footer } from './Footer.style';
 
-function Footer() {
+export const Footer: FC = () => {
   return (
     <footer css={footer} role="contentinfo">
       © 2023 &nbsp;
@@ -11,6 +11,4 @@ function Footer() {
       . Made with 🩶 and &nbsp; <a href="https://swapi.dev/">swapi.dev</a>
     </footer>
   );
-}
-
-export default Footer;
+};

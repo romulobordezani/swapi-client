@@ -1,2 +1,2 @@
-declare function Footer(): import("@emotion/react/jsx-runtime").JSX.Element;
-export default Footer;
+import { FC } from 'react';
+export declare const Footer: FC;

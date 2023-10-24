@@ -22,19 +22,19 @@ export const header__logo = css`
   flex-direction: row;
   font-size: inherit;
   text-decoration: none;
+  gap: 30px;
+  padding: 30px 0;
 
   @container ${largeScreen} {
     font-size: 2rem;
+    padding: 30px 0 0 30px;
   }
 `;
 
 export const header__logo__icon = css`
-  padding: 40px 30px 30px 30px;
-  max-width: 15%;
-
   img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 50px;
   }
 `;
 

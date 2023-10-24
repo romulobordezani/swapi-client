@@ -13,7 +13,7 @@ const getIdFromUrl = (url: string): string | null => {
 const RESOURCE_NAME: Record<string, string | null> = {
   films: 'films',
   people: 'characters',
-  characters: 'planets',
+  planets: 'planets',
   species: 'species',
   starship: 'starship',
   vehicles: 'vehicles',

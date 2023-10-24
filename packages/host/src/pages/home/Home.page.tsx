@@ -11,15 +11,14 @@ const HomePage: FC = () => {
         <motion.div
           whileHover={{ scale: 1.2, rotate: 90 }}
           whileTap={{
-            scale: 0.8,
-            rotate: -90,
-            borderRadius: '100%'
+            scale: 0.6,
+            rotate: -90
           }}
           initial={{
             marginTop: '0px'
           }}
           animate={{
-            marginTop: '50px'
+            marginTop: '70px'
           }}
           transition={{
             repeat: Infinity,

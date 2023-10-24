@@ -49,8 +49,14 @@ export const swapiV2 = createApi({
       query: (id) => `${ResourceType.Planet}/${id}`
     }),
 
-    listPlanets: builder.query<PagedResults<Planet>, number | void>({
-      query: (page = 1) => `${ResourceType.Planet}/?page=${page}`
+    listPlanets: builder.query<PagedResults<Planet>, { page: number } | undefined>({
+      query: (params) => {
+        if (params) {
+          const { page } = params;
+          return `${ResourceType.Planet}/?page=${page}`;
+        }
+        return `${ResourceType.Planet}`;
+      }
     }),
 
     searchPlanets: builder.query<SearchResult<Planet>, SearchResult<Planet>['params']>({
@@ -62,8 +68,14 @@ export const swapiV2 = createApi({
       query: (id) => `${ResourceType.Species}/${id}`
     }),
 
-    listSpecies: builder.query<PagedResults<Species>, number | void>({
-      query: (page = 1) => `${ResourceType.Species}/?page=${page}`
+    listSpecies: builder.query<PagedResults<Species>, { page: number } | undefined>({
+      query: (params) => {
+        if (params) {
+          const { page } = params;
+          return `${ResourceType.Species}/?page=${page}`;
+        }
+        return `${ResourceType.Species}`;
+      }
     }),
 
     searchSpecies: builder.query<SearchResult<Species>, SearchResult<Species>['params']>({
@@ -75,8 +87,14 @@ export const swapiV2 = createApi({
       query: (id) => `${ResourceType.Starship}/${id}`
     }),
 
-    listStarships: builder.query<PagedResults<Starship>, number | void>({
-      query: (page = 1) => `${ResourceType.Starship}/?page=${page}`
+    listStarships: builder.query<PagedResults<Starship>, { page: number } | undefined>({
+      query: (params) => {
+        if (params) {
+          const { page } = params;
+          return `${ResourceType.Starship}/?page=${page}`;
+        }
+        return `${ResourceType.Starship}`;
+      }
     }),
 
     searchStarships: builder.query<SearchResult<Starship>, SearchResult<Starship>['params']>({
@@ -88,8 +106,14 @@ export const swapiV2 = createApi({
       query: (id) => `${ResourceType.Vehicle}/${id}`
     }),
 
-    listVehicles: builder.query<PagedResults<Vehicle>, number | void>({
-      query: (page = 1) => `${ResourceType.Vehicle}/?page=${page}`
+    listVehicles: builder.query<PagedResults<Vehicle>, { page: number } | undefined>({
+      query: (params) => {
+        if (params) {
+          const { page } = params;
+          return `${ResourceType.Vehicle}/?page=${page}`;
+        }
+        return `${ResourceType.Vehicle}`;
+      }
     }),
 
     searchVehicles: builder.query<SearchResult<Vehicle>, SearchResult<Vehicle>['params']>({

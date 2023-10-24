@@ -1,7 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Footer from 'DesignSystem/Footer';
-import Header from 'DesignSystem/Header';
+import { Footer, Header } from 'DesignSystem/Components';
 
 import { mainLayout, layoutContainer, push } from './Main.style';
 

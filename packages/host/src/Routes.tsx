@@ -3,10 +3,11 @@ import { Route, Routes } from 'react-router-dom';
 import { MainLayout } from './layouts/main';
 
 const FilmsPage = React.lazy(async () => import('Films/Page'));
-import Loader from 'DesignSystem/Loader';
+import { Loader } from 'DesignSystem/Components';
 
 import HomePage from './pages/home/Home.page';
 import { PeoplePage } from './pages/people';
+import PlanetPage from './pages/planets/PlanetPage';
 
 export const AppRoutes: FC = () => {
   return (
@@ -33,6 +34,14 @@ export const AppRoutes: FC = () => {
           element={
             <Suspense fallback={<Loader />}>
               <PeoplePage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="planets"
+          element={
+            <Suspense fallback={<Loader />}>
+              <PlanetPage />
             </Suspense>
           }
         />
