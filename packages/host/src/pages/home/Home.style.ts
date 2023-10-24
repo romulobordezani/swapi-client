@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { largeScreen } from 'DesignSystem/Theme';
 
 export const home = css`
   display: flex;
@@ -9,9 +10,13 @@ export const home = css`
 `;
 
 export const featuredImage = css`
-  width: 30%;
+  width: 60%;
   height: fit-content;
   transform-style: preserve-3d;
+
+  @media ${largeScreen} {
+    width: 30%;
+  }
 
   img {
     width: 100%;

@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import React from 'react';
+import React, { FC } from 'react';
 
 import TrainingBall from './assets/jedi-training-ball.png';
 import { home, featuredImage } from './Home.style';
 
-function HomePage() {
+const HomePage: FC = () => {
   return (
     <div css={home}>
       <div css={featuredImage}>
@@ -33,6 +33,6 @@ function HomePage() {
       </div>
     </div>
   );
-}
+};
 
 export default HomePage;

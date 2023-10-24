@@ -1,23 +1,36 @@
 import { css } from '@emotion/react';
+import { largeScreen } from '../../theme/breakpoints.constant';
 import { swYellow } from '../../theme/colors.constant';
 
 export const header = css`
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-content: space-around;
   align-items: center;
   justify-content: space-between;
+  container-type: inline-size;
+  font-size: 1.2rem;
+
+  @media ${largeScreen} {
+    flex-direction: row;
+  }
 `;
 
-export const logo_group = css`
+export const header__logo = css`
   display: flex;
   flex-direction: row;
+  font-size: inherit;
+  text-decoration: none;
+
+  @container ${largeScreen} {
+    font-size: 2rem;
+  }
 `;
 
-export const logo_group__icon = css`
+export const header__logo__icon = css`
   padding: 40px 30px 30px 30px;
-  width: 50px;
+  max-width: 15%;
 
   img {
     width: 100%;
@@ -25,36 +38,40 @@ export const logo_group__icon = css`
   }
 `;
 
-export const logo_group__type = css`
+export const header__logo__text = css`
   font-family: 'lato', sans-serif;
   font-weight: 300;
-  font-size: 30px;
-  letter-spacing: 10px;
+  font-size: 1.7rem;
+  letter-spacing: 5px;
   color: #ffffff;
   align-items: center;
   display: flex;
 `;
 
 export const header__nav = css`
-  padding: 20px 20px 20px 0;
+  @media ${largeScreen} {
+    font-size: 1.3rem;
+  }
 
   ul {
-    width: 100%;
+    margin: 0;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
 
     li {
-      display: inline-block;
       list-style: none;
-      margin-right: 10px;
 
       a {
-        font-size: 20px;
+        font-size: inherit;
         text-decoration: none;
-        line-height: 20px;
         display: flex;
         align-items: center;
         font-weight: 100;
-        padding: 10px;
-        border-radius: 10px;
+        padding: 5px;
+        border-radius: 5px;
         transition: background-color 0.3s ease-out;
 
         svg {

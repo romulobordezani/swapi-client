@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PaginableContainerProps from '@dsTypes/PaginableContainer';
-import { useSearchFilmsQuery } from 'Host/ReduxHooks';
+import { useListFilmsQuery } from 'Host/ReduxHooks';
 import { Displayer } from './FilmsDisplayer';
 
 const PaginableContainer = React.lazy(
@@ -10,9 +10,8 @@ const PaginableContainer = React.lazy(
 export const FilmsPage = () => {
   const [page, setPage] = useState<number>(1);
 
-  const { data, error, isLoading, isFetching } = useSearchFilmsQuery({
-    page,
-    search: 'a'
+  const { data, error, isLoading, isFetching } = useListFilmsQuery({
+    page
   });
 
   return <PaginableContainer {...{ data, error, isLoading, isFetching, page, setPage, Displayer }} />;

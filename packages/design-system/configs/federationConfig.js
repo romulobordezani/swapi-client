@@ -10,7 +10,10 @@ const federationConfig = (HOST_URL) => {
       './Footer': './src/components/Footer/Footer.tsx',
       './Header': './src/components/Header/Header.tsx',
       './PaginableContainer': './src/components/PaginableContainer/PaginableContainer.tsx',
-      './GlobalStyle': './src/global.style.ts'
+      './Loader': './src/components/Loader/Loader.tsx',
+      './Theme': './src/theme',
+      './GlobalStyle': './src/global.style.ts',
+      './Utils': './src/utils'
     },
     remotes: {
       Host: `Host@${HOST_URL}/remoteEntry.js`
@@ -29,6 +32,10 @@ const federationConfig = (HOST_URL) => {
         singleton: true,
         requiredVersion: dependencies['react-router-dom']
       },
+      "@emotion/react": {
+        singleton: true,
+        requiredVersion: dependencies["@emotion/react"],
+      }
     }
   }
 };

@@ -24,6 +24,10 @@ const federationConfig = (DS_URL, FILMS_URL) => {
         singleton: true,
         requiredVersion: dependencies["react-dom"],
       },
+      "@emotion/react": {
+        singleton: true,
+        requiredVersion: dependencies["@emotion/react"],
+      }
     },
   };
 };

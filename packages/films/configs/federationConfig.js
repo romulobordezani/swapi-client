@@ -21,6 +21,10 @@ const federationConfig = (HOST_URL, DS_URL) => {
       'react-dom': {
         singleton: true,
         requiredVersion: dependencies['react-dom']
+      },
+      "@emotion/react": {
+        singleton: true,
+        requiredVersion: dependencies["@emotion/react"],
       }
     }
   }

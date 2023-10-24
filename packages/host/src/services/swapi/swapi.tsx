@@ -11,8 +11,14 @@ export const swapiV2 = createApi({
       query: (id) => `${ResourceType.Film}/${id}`
     }),
 
-    listFilms: builder.query<PagedResults<Film>, number | void>({
-      query: (page = 1) => `${ResourceType.Film}/?page=${page}`
+    listFilms: builder.query<PagedResults<Film>, { page: number } | undefined>({
+      query: (params) => {
+        if (params) {
+          const { page } = params;
+          return `${ResourceType.Film}/?page=${page}`;
+        }
+        return `${ResourceType.Film}`;
+      }
     }),
 
     searchFilms: builder.query<SearchResult<Film>, SearchResult<Film>['params']>({
@@ -24,8 +30,14 @@ export const swapiV2 = createApi({
       query: (id) => `${ResourceType.People}/${id}`
     }),
 
-    listPeople: builder.query<PagedResults<People>, number | void>({
-      query: (page = 1) => `${ResourceType.People}/?page=${page}`
+    listPeople: builder.query<PagedResults<People>, { page: number } | undefined>({
+      query: (params) => {
+        if (params) {
+          const { page } = params;
+          return `${ResourceType.People}/?page=${page}`;
+        }
+        return `${ResourceType.People}`;
+      }
     }),
 
     searchPeople: builder.query<SearchResult<People>, SearchResult<People>['params']>({

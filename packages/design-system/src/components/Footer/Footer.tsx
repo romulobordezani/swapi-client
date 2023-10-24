@@ -4,7 +4,11 @@ import { footer } from './Footer.style';
 function Footer() {
   return (
     <footer css={footer} role="contentinfo">
-      © 2023 Romulo Bordezani. All rights reserved - Made with 🩶 and &nbsp; <a href="https://swapi.dev/">swapi.dev</a>
+      © 2023 &nbsp;
+      <a href="https://romulobordezani.com.br/" target="_blank">
+        R&B
+      </a>
+      . Made with 🩶 and &nbsp; <a href="https://swapi.dev/">swapi.dev</a>
     </footer>
   );
 }

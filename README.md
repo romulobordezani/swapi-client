@@ -4,6 +4,9 @@ Welcome to the **STRAPI Web Client** made by [Romulo Bordezani](https://github.c
 
 > Bootstraped from [module-federation-examples](https://github.com/module-federation/module-federation-examples/)
 
+## Demo
+
+Available at: [swapi-client-alpha.vercel.app](https://swapi-client-alpha.vercel.app)
 
 ## Installation
 

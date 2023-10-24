@@ -2,13 +2,17 @@ import { ThunkAction, Action } from '@reduxjs/toolkit';
 export declare const store: import("@reduxjs/toolkit/dist/configureStore").ToolkitStore<{
     swapi_api: import("@reduxjs/toolkit/query").CombinedState<{
         getFilmById: import("@reduxjs/toolkit/query").QueryDefinition<number, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").Film, "swapi_api">;
-        listFilms: import("@reduxjs/toolkit/query").QueryDefinition<number | void, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Film>, "swapi_api">;
+        listFilms: import("@reduxjs/toolkit/query").QueryDefinition<{
+            page: number;
+        } | undefined, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Film>, "swapi_api">;
         searchFilms: import("@reduxjs/toolkit/query").QueryDefinition<{
             page: number;
             search: string;
         }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").SearchResult<import("../services/swapi/types").Film>, "swapi_api">;
         getPeopleById: import("@reduxjs/toolkit/query").QueryDefinition<number, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").People, "swapi_api">;
-        listPeople: import("@reduxjs/toolkit/query").QueryDefinition<number | void, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").People>, "swapi_api">;
+        listPeople: import("@reduxjs/toolkit/query").QueryDefinition<{
+            page: number;
+        } | undefined, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").People>, "swapi_api">;
         searchPeople: import("@reduxjs/toolkit/query").QueryDefinition<{
             page: number;
             search: string;
@@ -41,13 +45,17 @@ export declare const store: import("@reduxjs/toolkit/dist/configureStore").Toolk
 }, import("redux").AnyAction, import("@reduxjs/toolkit").MiddlewareArray<[import("@reduxjs/toolkit").ThunkMiddleware<{
     swapi_api: import("@reduxjs/toolkit/query").CombinedState<{
         getFilmById: import("@reduxjs/toolkit/query").QueryDefinition<number, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").Film, "swapi_api">;
-        listFilms: import("@reduxjs/toolkit/query").QueryDefinition<number | void, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Film>, "swapi_api">;
+        listFilms: import("@reduxjs/toolkit/query").QueryDefinition<{
+            page: number;
+        } | undefined, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Film>, "swapi_api">;
         searchFilms: import("@reduxjs/toolkit/query").QueryDefinition<{
             page: number;
             search: string;
         }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").SearchResult<import("../services/swapi/types").Film>, "swapi_api">;
         getPeopleById: import("@reduxjs/toolkit/query").QueryDefinition<number, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").People, "swapi_api">;
-        listPeople: import("@reduxjs/toolkit/query").QueryDefinition<number | void, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").People>, "swapi_api">;
+        listPeople: import("@reduxjs/toolkit/query").QueryDefinition<{
+            page: number;
+        } | undefined, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").People>, "swapi_api">;
         searchPeople: import("@reduxjs/toolkit/query").QueryDefinition<{
             page: number;
             search: string;
@@ -79,13 +87,17 @@ export declare const store: import("@reduxjs/toolkit/dist/configureStore").Toolk
     }, never, "swapi_api">;
 }, import("redux").AnyAction, undefined>, import("redux").Middleware<{}, import("@reduxjs/toolkit/query").RootState<{
     getFilmById: import("@reduxjs/toolkit/query").QueryDefinition<number, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").Film, "swapi_api">;
-    listFilms: import("@reduxjs/toolkit/query").QueryDefinition<number | void, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Film>, "swapi_api">;
+    listFilms: import("@reduxjs/toolkit/query").QueryDefinition<{
+        page: number;
+    } | undefined, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").Film>, "swapi_api">;
     searchFilms: import("@reduxjs/toolkit/query").QueryDefinition<{
         page: number;
         search: string;
     }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").SearchResult<import("../services/swapi/types").Film>, "swapi_api">;
     getPeopleById: import("@reduxjs/toolkit/query").QueryDefinition<number, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").People, "swapi_api">;
-    listPeople: import("@reduxjs/toolkit/query").QueryDefinition<number | void, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").People>, "swapi_api">;
+    listPeople: import("@reduxjs/toolkit/query").QueryDefinition<{
+        page: number;
+    } | undefined, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").PagedResults<import("../services/swapi/types").People>, "swapi_api">;
     searchPeople: import("@reduxjs/toolkit/query").QueryDefinition<{
         page: number;
         search: string;

@@ -14,6 +14,7 @@ export const {
   useGetPeopleByIdQuery,
   useListPeopleQuery,
   useLazySearchPeopleQuery,
+  useSearchPeopleQuery,
 
   useGetPlanetByIdQuery,
   useListPlanetsQuery,

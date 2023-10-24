@@ -1,7 +1,7 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import StormTrooper from './assets/storm-min.svg';
-import { header, logo_group, logo_group__icon, logo_group__type, header__nav } from './Header.style';
+import { header, header__logo, header__logo__icon, header__logo__text, header__nav } from './Header.style';
 
 import { FaJedi, FaRocket, FaTruck } from 'react-icons/fa';
 import { RiEmpathizeFill, RiPlanetFill, RiAliensFill, RiClapperboardFill } from 'react-icons/ri';
@@ -9,12 +9,12 @@ import { RiEmpathizeFill, RiPlanetFill, RiAliensFill, RiClapperboardFill } from 
 function Header() {
   return (
     <div css={header}>
-      <div css={logo_group}>
-        <div css={logo_group__icon}>
+      <Link css={header__logo} to="/">
+        <div css={header__logo__icon}>
           <img src={StormTrooper} alt="StormTrooper" />
         </div>
-        <div css={logo_group__type}> Star Wars Oracle</div>
-      </div>
+        <div css={header__logo__text}> Star Wars Oracle</div>
+      </Link>
 
       <nav css={header__nav}>
         <ul>

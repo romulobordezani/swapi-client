@@ -2,13 +2,16 @@ import { FC } from 'react';
 import { css } from '@emotion/react';
 
 import Button from '../Button/Button';
+import Loader from '../Loader/Loader';
 
 export interface PaginableContainerProps {
-  data: {
-    results: Record<string, string>[];
-    previous: boolean;
-    next: boolean;
-  };
+  data:
+    | {
+        results: Record<string, string>[];
+        previous: boolean;
+        next: boolean;
+      }
+    | undefined;
   error: Record<string, string>;
   isLoading: boolean;
   isFetching: boolean;
@@ -37,10 +40,10 @@ const PaginableContainer: FC<PaginableContainerProps> = ({
   }
 
   if (isLoading || isFetching) {
-    return <div>Loading</div>;
+    return <Loader />;
   }
 
-  if (!data?.results || !data?.results.length) {
+  if (!data?.results || !data?.results?.length) {
     return <div>No items.</div>;
   }
 
@@ -50,20 +53,35 @@ const PaginableContainer: FC<PaginableContainerProps> = ({
         padding: 30px;
       `}
     >
-      {data?.results.map((item, id) => {
-        return <Displayer key={item.title} {...{ item, id }} />;
+      {data?.results?.map((item, index) => {
+        return <Displayer key={item.url} {...{ item, index }} />;
       })}
 
-      {data.previous && (
-        <Button onClick={() => setPage(page - 1)} disabled={isFetching}>
-          Previous
-        </Button>
-      )}
-      {data.next && (
-        <Button onClick={() => setPage(page + 1)} disabled={isFetching}>
-          Next
-        </Button>
-      )}
+      <div
+        css={css`
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 30px;
+        `}
+      >
+        {!data.previous && (
+          <div
+            css={css`
+              visibility: hidden;
+            `}
+          />
+        )}
+        {data.previous && (
+          <Button onClick={() => setPage(page - 1)} disabled={isFetching}>
+            Previous Page
+          </Button>
+        )}
+        {data.next && (
+          <Button onClick={() => setPage(page + 1)} disabled={isFetching}>
+            Next Page
+          </Button>
+        )}
+      </div>
     </div>
   );
 };

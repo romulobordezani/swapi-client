@@ -6,14 +6,20 @@ const globalStyle = css`
     padding: 0;
     margin: 0;
     background: white;
-    min-height: 100%;
+    height: 100%;
+    height: 100%;
     font-family: Helvetica, Arial, sans-serif;
     background: #111111;
     color: #ffffff;
+    font-size: 12px;
 
     a {
       color: #ffffff;
     }
+  }
+
+  #host {
+    height: 100%;
   }
 `;
 
