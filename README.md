@@ -35,16 +35,17 @@ yarn
 
 ## Running 
 
-Execute the following at the root: 
+Execute the following at the root to get a brand new .env file: 
 ```bash
 yarn generate-env-file
 ```
 
-Run `yarn start` in root folder. This will build and serve both `host`, `films` and `design-system` on ports 3000, 4000 and 4001 respectively.
+Run `yarn start` in the root folder. This will build and serve these Federate Modules `host`,`design-system`, and `films` on ports 3000, 4000 and 4001 respectively.
 
-- [localhost:3000](http://localhost:3000/)
-- [localhost:4000](http://localhost:4000/)
-- [localhost:4000](http://localhost:40001/)
+> Tip: the very first run needs to generate @mf-types, so probably you need to re-run
+
+> Tip 2: while adding new Federated components, close your browser's tab running the app before reload the command `yarn start` - seems that the hot updates are trying to get the bundle before it is generated, causing issues
+
 
 
 ## Testing

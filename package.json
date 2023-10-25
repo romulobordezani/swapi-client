@@ -22,7 +22,7 @@
   },
   "author": "romulobordezani",
   "engines": {
-    "node": ">=18.18.2"
+    "node": ">=18.17.1"
   },
   "license": "MIT",
   "workspaces": [
