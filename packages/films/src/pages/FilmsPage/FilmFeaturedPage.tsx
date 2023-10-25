@@ -6,14 +6,13 @@ import { getResourceImageUrl, getHostedPlaceHolderImageUrl } from 'DesignSystem/
 import { Content, Loader } from 'DesignSystem/Components';
 import { swYellow } from 'DesignSystem/Theme';
 import { css } from '@emotion/react';
-import { Film } from '@hostTypes/SwapiTypes';
 
 const FilmFeaturedPage = () => {
   const { id } = useParams();
   const idAsNumber = Number(id);
   const { data: film, isLoading, error } = useGetFilmByIdQuery(idAsNumber);
 
-  const data = film as Film;
+  const data = film;
 
   if (isLoading) {
     return <Loader />;

@@ -9,7 +9,6 @@ export const header = css`
   align-content: space-around;
   align-items: center;
   justify-content: space-between;
-  container-type: inline-size;
   font-size: 1.2rem;
 
   @media ${largeScreen} {
@@ -25,7 +24,7 @@ export const header__logo = css`
   gap: 30px;
   padding: 30px 0;
 
-  @container ${largeScreen} {
+  @media ${largeScreen} {
     font-size: 2rem;
     padding: 30px 0 0 30px;
   }

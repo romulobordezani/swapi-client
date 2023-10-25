@@ -2,12 +2,11 @@ import styled from '@emotion/styled';
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Film } from '@hostTypes/SwapiTypes';
 import { getResourceImageUrl, getIdFromUrl } from 'DesignSystem/Utils';
 
 export interface FilmDisplayerProps {
   id: string;
-  item: Film;
+  item: Record<string, any>;
   className: string;
 }
 

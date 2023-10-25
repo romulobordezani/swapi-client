@@ -3,9 +3,9 @@ import { FC } from 'react';
 import { content } from './Content.style';
 
 export interface ContentProps {
-  label: string;
+  label?: string;
   value: string;
-  color: string;
+  color?: string;
 }
 
 export const Content: FC<ContentProps> = ({ label, value, color }) => {
