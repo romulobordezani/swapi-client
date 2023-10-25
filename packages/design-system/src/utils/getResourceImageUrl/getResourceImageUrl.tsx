@@ -1,6 +1,6 @@
 const VISUAL_GUIDE_BASE_URL = 'https://starwars-visualguide.com/assets/img/';
 
-const getIdFromUrl = (url: string): string | null => {
+export const getIdFromUrl = (url: string): string | null => {
   const matches = url.match(/([a-z0-9]+)(?:\/?$)/);
 
   if (matches && matches?.length === 2) {
