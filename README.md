@@ -5,11 +5,11 @@ Welcome to the **STRAPI Web Client** made by [Romulo Bordezani](https://github.c
 ## Features
 
 - Mono-repo made with Module Federation, based on Yarn and Webpack
-- The page Films is a completelly isolated package, to demonstrate the integration between packages
+- The page Films is a completely isolated package, to demonstrate the integration between packages
 - Modern Redux - Using Slices, RTK for Data Fetching with Cache implemmented
-- Popular Views persistance on Local Storage made using [redux-persist](https://www.npmjs.com/package/redux-persist)
-- Integration with the Image Bank - https://starwars-visualguide.com/ to provide accurate pictares for every resource
-- Animation library [framer](https://www.framer.com/motion/) is setup up.
+- Popular Views persistence on Local Storage made using [redux-persist](https://www.npmjs.com/package/redux-persist)
+- Integration with the Image Bank - https://starwars-visualguide.com/ to provide accurate pictures for all resource types
+- Animation library [framer](https://www.framer.com/motion/) set on
 - Remote Type script definitions between packages, generated using [FederatedTypesPlugin](https://github.com/module-federation/typescript)
 - Styles using [Emotion](https://emotion.sh/docs/introduction) and [BEM](https://getbem.com/introduction/)
 - Supports Jest and Cypress 
