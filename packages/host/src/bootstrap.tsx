@@ -4,8 +4,4 @@ import App from './App';
 
 const host = ReactDOM.createRoot(document.getElementById('host') as Element);
 
-host.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+host.render(<App />);
