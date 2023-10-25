@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/romulobordezani/swapi-client/main/packages/host/src/pages/home/assets/jedi-training-ball.png" width="400" />
+
 # Star Wars API web Client
 
 Welcome to the **STRAPI Web Client** made by [Romulo Bordezani](https://github.com/romulobordezani).
@@ -12,7 +14,7 @@ Welcome to the **STRAPI Web Client** made by [Romulo Bordezani](https://github.c
 - Animation library [framer](https://www.framer.com/motion/) set on
 - Remote Type script definitions between packages, generated using [FederatedTypesPlugin](https://github.com/module-federation/typescript)
 - Styles using [Emotion](https://emotion.sh/docs/introduction) and [BEM](https://getbem.com/introduction/)
-- Supports Jest and Cypress 
+- Supports Jest and Cypress
 
 
 ## Next steps
@@ -32,6 +34,7 @@ Available at: [swapi-client-alpha.vercel.app](https://swapi-client-alpha.vercel.
 npm install --global yarn
 yarn
 ```
+</br></br></br>
 
 ## Running 
 
@@ -47,37 +50,69 @@ Run `yarn start` in the root folder. This will build and serve these Federate Mo
 > Tip 2: while adding new Federated components, close your browser's tab running the app before reload the command `yarn start` - seems that the hot updates are trying to get the bundle before it is generated, causing issues
 
 
+</br></br></br>
 
-## Testing
+
+### Linting
+```bash
+yarn lint
+```
+> Will ONLY check for eslint and prettier issues
+---
+```bash
+yarn prettier-format
+```
+> Automatically fixes code formatting, when possible
+
+</br></br></br>
+
+### Cleaning up
+
+Removes all `node_modules`, `dist` and `@mf-types` folders, to start a clean rebuild
+```bash
+yarn clean
+```
+</br></br></br>
+
+### Testing
 
 ```bash
 yarn test
 ```
 
-## Lint
 ```bash
-yarn lint
+yarn test:coverage
 ```
+> Generates a test coverage report
 
-### Running Host React Testing Library tests through Jest
+
+
+####  React Testing Library tests through Jest and Module Federation
 
 This is achieved using jest's `moduleNameMapper` by telling it how to resolve remote imports.
 Add Design System components at the list following the pattern bellow in the file `jest.config.js`:
 
 ```javascript
   moduleNameMapper: {
-    'DesignSystem/Button': '<rootDir>/../design-system/src/components/Button',
+    'DesignSystem/Components': '<rootDir>/packages/design-system/src/components',
   }
 ```
+
+</br></br></br>
 
 ## Running Host Cypress Component test
 
 Go to host service folder and run `yarn cypress` <br />
 This is achieved using webpack's `resolve.alias` by telling it how to resolve remote imports.
 
-## FederationConfig
+```bash
+yarn workspace host cypress
+```
 
+</br></br></br>
+
+## FederationConfig
 - For more settings, you can access federationConfig from path packages/[host|films|design-system]/configs/federationConfig.js
 
-## Initial Origin
-> Bootstraped from [module-federation-examples](https://github.com/module-federation/module-federation-examples/tree/master/typescript-react-monorepo-test)
+## Initial Bootstrap
+> Bootstraped from [module-federation-examples/typescript-react-monorepo-test](https://github.com/module-federation/module-federation-examples/tree/master/typescript-react-monorepo-test)

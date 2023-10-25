@@ -1,0 +1,2 @@
+# Ignore all generated .d.ts files:
+**/*.d.ts
