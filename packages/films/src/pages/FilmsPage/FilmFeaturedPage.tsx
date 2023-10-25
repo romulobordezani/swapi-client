@@ -1,28 +1,30 @@
 import { useParams } from 'react-router-dom';
-import { useGetPeopleByIdQuery } from '../../redux/hooks';
-import { FeaturedContainer } from '../../layouts/featured/FeaturedContainer';
-import { ResourceType } from '../../services/swapi/types';
+import { useGetFilmByIdQuery } from 'Host/ReduxHooks';
+import { FeaturedContainer } from 'Host/FeaturedContainer';
 
 import { getResourceImageUrl, getHostedPlaceHolderImageUrl } from 'DesignSystem/Utils';
 import { Content, Loader } from 'DesignSystem/Components';
 import { swYellow } from 'DesignSystem/Theme';
 import { css } from '@emotion/react';
+import { Film } from '@hostTypes/SwapiTypes';
 
-export const PeopleFeaturedPage = () => {
+const FilmFeaturedPage = () => {
   const { id } = useParams();
   const idAsNumber = Number(id);
-  const { data, isLoading, error } = useGetPeopleByIdQuery(idAsNumber);
+  const { data: film, isLoading, error } = useGetFilmByIdQuery(idAsNumber);
+
+  const data = film as Film;
 
   if (isLoading) {
     return <Loader />;
   }
 
   if (error || !data) {
-    return <div>'Error...'</div>;
+    return <div>Error...</div>;
   }
 
   return (
-    <FeaturedContainer resourceType={ResourceType.People} resource={data}>
+    <FeaturedContainer resourceType={'films'} resource={data}>
       <div
         css={css`
           display: flex;
@@ -39,19 +41,18 @@ export const PeopleFeaturedPage = () => {
         `}
       >
         <img
-          src={getResourceImageUrl(ResourceType.People, data.url)}
-          alt={data?.name}
+          src={getResourceImageUrl('films', data.url)}
+          alt={data?.title}
           onError={({ currentTarget }) => {
             currentTarget.onerror = null;
             currentTarget.src = getHostedPlaceHolderImageUrl();
           }}
         />
-        <Content value={data.name} color={swYellow} />
-        <Content label="Birth year" value={data.birth_year} />
-        <Content label="Eye color" value={data.eye_color} />
-        <Content label="Height" value={data.height} />
-        <Content label="Skin Color" value={data.skin_color} />
+        <Content value={data.title} color={swYellow} />
+        <Content label="Director" value={data.director} />
       </div>
     </FeaturedContainer>
   );
 };
+
+export default FilmFeaturedPage;

@@ -6,3 +6,4 @@ declare module 'DesignSystem/Theme';
 declare module 'DesignSystem/Hooks';
 declare module 'DesignSystem/Utils';
 declare module 'Films/Page';
+declare module 'Films/FilmFeaturedPage';

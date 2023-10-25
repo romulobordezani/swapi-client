@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { largeScreen } from './theme';
+import { largeScreen, swYellow } from './theme';
 
 const globalStyle = css`
   html,
@@ -13,9 +13,17 @@ const globalStyle = css`
     background: #111111;
     color: #ffffff;
     font-size: 12px;
+    letter-spacing: 2px;
+    overflow-x: hidden;
 
     a {
       color: #ffffff;
+      text-decoration: none;
+      transition: color 0.5s ease;
+
+      :hover {
+        color: ${swYellow};
+      }
     }
 
     @media ${largeScreen} {

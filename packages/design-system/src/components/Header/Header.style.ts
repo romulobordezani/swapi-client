@@ -49,6 +49,8 @@ export const header__logo__text = css`
 `;
 
 export const header__nav = css`
+  font-size: 1.2rem;
+
   @media ${largeScreen} {
     font-size: 1.3rem;
   }
@@ -66,7 +68,6 @@ export const header__nav = css`
 
       a {
         font-size: inherit;
-        text-decoration: none;
         display: flex;
         align-items: center;
         font-weight: 100;

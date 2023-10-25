@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { useGetPeopleByIdQuery } from '../../redux/hooks';
+import { useGetPlanetByIdQuery } from '../../redux/hooks';
 import { FeaturedContainer } from '../../layouts/featured/FeaturedContainer';
 import { ResourceType } from '../../services/swapi/types';
 
@@ -8,10 +8,10 @@ import { Content, Loader } from 'DesignSystem/Components';
 import { swYellow } from 'DesignSystem/Theme';
 import { css } from '@emotion/react';
 
-export const PeopleFeaturedPage = () => {
+export const PlanetFeaturedPage = () => {
   const { id } = useParams();
   const idAsNumber = Number(id);
-  const { data, isLoading, error } = useGetPeopleByIdQuery(idAsNumber);
+  const { data, isLoading, error } = useGetPlanetByIdQuery(idAsNumber);
 
   if (isLoading) {
     return <Loader />;
@@ -22,7 +22,7 @@ export const PeopleFeaturedPage = () => {
   }
 
   return (
-    <FeaturedContainer resourceType={ResourceType.People} resource={data}>
+    <FeaturedContainer resourceType={ResourceType.Planet} resource={data}>
       <div
         css={css`
           display: flex;
@@ -35,11 +35,12 @@ export const PeopleFeaturedPage = () => {
 
           img {
             max-width: 500px;
+            border-radius: 50%;
           }
         `}
       >
         <img
-          src={getResourceImageUrl(ResourceType.People, data.url)}
+          src={getResourceImageUrl(ResourceType.Planet, data.url)}
           alt={data?.name}
           onError={({ currentTarget }) => {
             currentTarget.onerror = null;
@@ -47,10 +48,10 @@ export const PeopleFeaturedPage = () => {
           }}
         />
         <Content value={data.name} color={swYellow} />
-        <Content label="Birth year" value={data.birth_year} />
-        <Content label="Eye color" value={data.eye_color} />
-        <Content label="Height" value={data.height} />
-        <Content label="Skin Color" value={data.skin_color} />
+        <Content label="Climate" value={data.climate} />
+        <Content label="Gravity" value={data.gravity} />
+        <Content label="Population" value={data.population} />
+        <Content label="Terrain" value={data.terrain} />
       </div>
     </FeaturedContainer>
   );

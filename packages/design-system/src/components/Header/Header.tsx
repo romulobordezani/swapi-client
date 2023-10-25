@@ -20,7 +20,7 @@ export const Header: FC = () => (
         <li>
           <NavLink to="/" className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'active' : '')}>
             <FaJedi />
-            <span>Home</span>
+            <span>Pop</span>
           </NavLink>
         </li>
         <li>

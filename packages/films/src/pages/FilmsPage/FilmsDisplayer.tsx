@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { Film } from '@hostTypes/SwapiTypes';
-import { getResourceImageUrl } from 'DesignSystem/Utils';
+import { getResourceImageUrl, getIdFromUrl } from 'DesignSystem/Utils';
 
 export interface FilmDisplayerProps {
   id: string;
@@ -11,10 +12,16 @@ export interface FilmDisplayerProps {
 }
 
 const FilmDisplayer: FC<FilmDisplayerProps> = ({ item, className }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className={className}>
+    <div
+      className={className}
+      onClick={() => {
+        navigate(getIdFromUrl(item?.url));
+      }}
+    >
       <img src={getResourceImageUrl('films', item.url)} alt={item?.title} />
-      <span>{item?.title}</span>
     </div>
   );
 };
@@ -30,6 +37,7 @@ export const Displayer = styled(FilmDisplayer)`
   align-items: center;
 
   img {
-    max-width: 300px;
+    max-width: 320px;
+    cursor: pointer;
   }
 `;

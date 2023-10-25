@@ -5,8 +5,14 @@ export const home = css`
   display: flex;
   width: 100%;
   height: 100%;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 100px;
+
+  ul {
+    padding: 0;
+  }
 `;
 
 export const featuredImage = css`
@@ -35,4 +41,8 @@ export const featuredImage = css`
     width: 100%;
     height: auto;
   }
+`;
+
+export const popularViews = css`
+  margin-bottom: 50px;
 `;

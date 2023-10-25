@@ -15,7 +15,7 @@ const RESOURCE_NAME: Record<string, string | null> = {
   people: 'characters',
   planets: 'planets',
   species: 'species',
-  starship: 'starship',
+  starships: 'starships',
   vehicles: 'vehicles',
   default: null
 };

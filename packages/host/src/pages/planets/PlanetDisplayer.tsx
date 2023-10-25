@@ -1,9 +1,12 @@
 import styled from '@emotion/styled';
 import { FC } from 'react';
+import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 import { Planet, ResourceType } from '../../services/swapi/types';
 
-import { getResourceImageUrl } from 'DesignSystem/Utils';
+import { getResourceImageUrl, getIdFromUrl, getHostedPlaceHolderImageUrl } from 'DesignSystem/Utils';
+import { Content } from 'DesignSystem/Components';
 
 export interface PeopleDisplayerProps {
   index: number;
@@ -12,18 +15,35 @@ export interface PeopleDisplayerProps {
 }
 
 const PeopleDisplayer: FC<PeopleDisplayerProps> = ({ index, item, className }) => {
+  const navigate = useNavigate();
+
   return (
-    <div key={index} className={className}>
-      <img
-        src={getResourceImageUrl(ResourceType.Planet, item.url)}
-        alt={item?.name}
-        onError={({ currentTarget }) => {
-          currentTarget.onerror = null;
-          currentTarget.src =
-            'https://user-images.githubusercontent.com/237508/90246627-ecbda400-de2c-11ea-8bfb-b4307bfb975d.png';
+    <div>
+      <motion.div
+        whileHover={{ scale: 1.2, rotate: 10 }}
+        whileTap={{
+          scale: 0.8,
+          rotate: -10
         }}
-      />
-      <span>{item?.name}</span>
+      >
+        <div
+          key={index}
+          className={className}
+          onClick={() => {
+            navigate(getIdFromUrl(item?.url));
+          }}
+        >
+          <img
+            src={getResourceImageUrl(ResourceType.Planet, item.url)}
+            alt={item?.name}
+            onError={({ currentTarget }) => {
+              currentTarget.onerror = null;
+              currentTarget.src = getHostedPlaceHolderImageUrl();
+            }}
+          />
+        </div>
+      </motion.div>
+      <Content value={item?.name} />
     </div>
   );
 };
@@ -31,7 +51,7 @@ const PeopleDisplayer: FC<PeopleDisplayerProps> = ({ index, item, className }) =
 export const Displayer = styled(PeopleDisplayer)`
   margin-bottom: 30px;
   background: #333;
-  border-radius: 15px;
+  border-radius: 50%;
   opacity: 0.8;
   display: flex;
   flex-direction: row;
@@ -39,6 +59,8 @@ export const Displayer = styled(PeopleDisplayer)`
   align-items: center;
 
   img {
-    max-width: 300px;
+    max-width: 320px;
+    height: 320px;
+    cursor: pointer;
   }
 `;

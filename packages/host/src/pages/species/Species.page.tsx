@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { useSearchPlanetsQuery } from '../../redux/hooks';
-import { Displayer } from './PlanetDisplayer';
-
+import React, { FC, useEffect, useState } from 'react';
+import { useSearchSpeciesQuery } from '../../redux/hooks';
+import { Displayer } from './SpeciesDisplayer';
 import { useDebounce } from 'DesignSystem/Hooks';
 
 import { PaginableContainer, SearchForm } from 'DesignSystem/Components';
 
-export const PlanetPage = () => {
+export const SpeciesPage: FC = () => {
   const [page, setPage] = useState<number>(1);
   const [search, setSearch] = useState<string>('');
   const debouncedSearchTerm = useDebounce(search, 1000);
@@ -17,7 +16,7 @@ export const PlanetPage = () => {
     }
   }, [search]);
 
-  const { data, error, isLoading, isFetching } = useSearchPlanetsQuery({
+  const { data, error, isLoading, isFetching } = useSearchSpeciesQuery({
     page,
     search: debouncedSearchTerm
   });
@@ -29,5 +28,3 @@ export const PlanetPage = () => {
     </>
   );
 };
-
-export default PlanetPage;

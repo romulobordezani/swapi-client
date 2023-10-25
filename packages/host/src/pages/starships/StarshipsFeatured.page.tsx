@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { useGetPeopleByIdQuery } from '../../redux/hooks';
+import { useGetStarshipByIdQuery } from '../../redux/hooks';
 import { FeaturedContainer } from '../../layouts/featured/FeaturedContainer';
 import { ResourceType } from '../../services/swapi/types';
 
@@ -8,10 +8,10 @@ import { Content, Loader } from 'DesignSystem/Components';
 import { swYellow } from 'DesignSystem/Theme';
 import { css } from '@emotion/react';
 
-export const PeopleFeaturedPage = () => {
+export const StarshipsFeaturedPage = () => {
   const { id } = useParams();
   const idAsNumber = Number(id);
-  const { data, isLoading, error } = useGetPeopleByIdQuery(idAsNumber);
+  const { data, isLoading, error } = useGetStarshipByIdQuery(idAsNumber);
 
   if (isLoading) {
     return <Loader />;
@@ -22,7 +22,7 @@ export const PeopleFeaturedPage = () => {
   }
 
   return (
-    <FeaturedContainer resourceType={ResourceType.People} resource={data}>
+    <FeaturedContainer resourceType={ResourceType.Starship} resource={data}>
       <div
         css={css`
           display: flex;
@@ -39,7 +39,7 @@ export const PeopleFeaturedPage = () => {
         `}
       >
         <img
-          src={getResourceImageUrl(ResourceType.People, data.url)}
+          src={getResourceImageUrl(ResourceType.Starship, data.url)}
           alt={data?.name}
           onError={({ currentTarget }) => {
             currentTarget.onerror = null;
@@ -47,10 +47,8 @@ export const PeopleFeaturedPage = () => {
           }}
         />
         <Content value={data.name} color={swYellow} />
-        <Content label="Birth year" value={data.birth_year} />
-        <Content label="Eye color" value={data.eye_color} />
-        <Content label="Height" value={data.height} />
-        <Content label="Skin Color" value={data.skin_color} />
+        <Content label="Crew" value={data?.crew} />
+        <Content label="Hyperdrive Rating" value={data?.hyperdrive_rating} />
       </div>
     </FeaturedContainer>
   );

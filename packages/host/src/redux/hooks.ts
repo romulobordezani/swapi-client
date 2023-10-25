@@ -19,10 +19,12 @@ export const {
   useGetPlanetByIdQuery,
   useListPlanetsQuery,
   useLazySearchPlanetsQuery,
+  useSearchPlanetsQuery,
 
   useGetSpecieByIdQuery,
   useListSpeciesQuery,
   useLazySearchSpeciesQuery,
+  useSearchSpeciesQuery,
 
   useGetStarshipByIdQuery,
   useListStarshipsQuery,
@@ -31,5 +33,6 @@ export const {
 
   useGetVehicleByIdQuery,
   useListVehiclesQuery,
-  useSearchVehiclesQuery
+  useSearchVehiclesQuery,
+  useLazySearchVehiclesQuery
 } = swapiV2;

@@ -1,12 +1,11 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
-export interface CounterState {
-    value: number;
+import { CountedResource } from './types/CountedResource';
+export interface PopularCounter {
+    views: CountedResource[];
 }
-export declare const counterSlice: import("@reduxjs/toolkit").Slice<CounterState, {
-    increment: (state: import("immer/dist/internal").WritableDraft<CounterState>) => void;
-    decrement: (state: import("immer/dist/internal").WritableDraft<CounterState>) => void;
-    incrementByAmount: (state: import("immer/dist/internal").WritableDraft<CounterState>, action: PayloadAction<number>) => void;
-}, "counter">;
-export declare const increment: import("@reduxjs/toolkit").ActionCreatorWithoutPayload<"counter/increment">, decrement: import("@reduxjs/toolkit").ActionCreatorWithoutPayload<"counter/decrement">, incrementByAmount: import("@reduxjs/toolkit").ActionCreatorWithPayload<number, "counter/incrementByAmount">;
-declare const _default: import("redux").Reducer<CounterState, import("redux").AnyAction>;
+export declare const counterSlice: import("@reduxjs/toolkit").Slice<PopularCounter, {
+    countPageView: (state: import("immer/dist/internal").WritableDraft<PopularCounter>, action: PayloadAction<Pick<CountedResource, 'resourceType' | 'resource'>>) => void;
+}, "popular">;
+export declare const countPageView: import("@reduxjs/toolkit").ActionCreatorWithPayload<Pick<CountedResource, "resource" | "resourceType">, "popular/countPageView">;
+declare const _default: import("redux").Reducer<PopularCounter, import("redux").AnyAction>;
 export default _default;

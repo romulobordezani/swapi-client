@@ -6,7 +6,8 @@ const federationConfig = (HOST_URL, DS_URL) => {
     name: 'Films',
     filename: 'remoteEntry.js',
     exposes: {
-      './Page': './src/pages/FilmsPage/FilmsPage.tsx'
+      './Page': './src/pages/FilmsPage/FilmsPage.tsx',
+      './FilmFeaturedPage': './src/pages/FilmsPage/FilmFeaturedPage.tsx'
     },
     remotes: {
       Host: `Host@${HOST_URL}/remoteEntry.js`,
@@ -25,6 +26,10 @@ const federationConfig = (HOST_URL, DS_URL) => {
       "@emotion/react": {
         singleton: true,
         requiredVersion: dependencies["@emotion/react"],
+      },
+      "react-router-dom": {
+        singleton: true,
+        requiredVersion: dependencies["react-router-dom"],
       }
     }
   }

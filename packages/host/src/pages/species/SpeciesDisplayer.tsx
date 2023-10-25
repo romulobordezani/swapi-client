@@ -3,18 +3,18 @@ import { FC } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
-import { People, ResourceType } from '../../services/swapi/types';
+import { Species, ResourceType } from '../../services/swapi/types';
 import { getResourceImageUrl, getHostedPlaceHolderImageUrl, getIdFromUrl } from 'DesignSystem/Utils';
 import { Content } from 'DesignSystem/Components';
 import { largeScreen, desktop, swYellow } from 'DesignSystem/Theme';
 
-export interface PeopleDisplayerProps {
+export interface SpeciesDisplayerProps {
   index: number;
-  item: People;
+  item: Species;
   className: string;
 }
 
-const PeopleDisplayer: FC<PeopleDisplayerProps> = ({ item, className }) => {
+const SpeciesDisplayer: FC<SpeciesDisplayerProps> = ({ item, className }) => {
   const navigate = useNavigate();
 
   return (
@@ -33,7 +33,7 @@ const PeopleDisplayer: FC<PeopleDisplayerProps> = ({ item, className }) => {
         }}
       >
         <img
-          src={getResourceImageUrl(ResourceType.People, item.url)}
+          src={getResourceImageUrl(ResourceType.Species, item.url)}
           alt={item?.name}
           onError={({ currentTarget }) => {
             currentTarget.onerror = null;
@@ -42,15 +42,14 @@ const PeopleDisplayer: FC<PeopleDisplayerProps> = ({ item, className }) => {
         />
         <div className="contentContainer">
           <Content value={item?.name} color={swYellow} />
-          <Content label="Birth Year" value={item?.birth_year} />
-          <Content label="Gender" value={item?.gender} />
+          <Content label="Classification" value={item?.classification} />
         </div>
       </div>
     </motion.div>
   );
 };
 
-export const Displayer = styled(PeopleDisplayer)`
+export const Displayer = styled(SpeciesDisplayer)`
   margin-bottom: 30px;
   background: #333;
   border-radius: 15px;
