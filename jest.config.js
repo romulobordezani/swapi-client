@@ -2,14 +2,21 @@ const config = {
   verbose: true,
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
+  watchPathIgnorePatterns: ['<rootDir>/node_modules/'],
   transform: {
     '^.+\\.tsx?$': 'ts-jest'
   },
-  testMatch: [
-    '**/__tests__/**/*.[jt]s?(x)',
-    '**/?(*.)+(spec|test).[jt]s?(x)',
-    '!**/__tests__/**/*.cy.[jt]s?(x)'
-  ]
+  collectCoverage: true,
+  collectCoverageFrom: [
+    '**/*.{ts,tsx}',
+    '!**/node_modules/**',
+    '!**/dist/**',
+    '!**/@mf-types/**',
+    '!**/configs/**',
+    '!**/cypress/**',
+    '!**/public/**',
+  ],
+  testPathIgnorePatterns: ["dist", "cypress", "<rootDir>/packages/host/src/__tests__"]
 };
 
 module.exports = config;

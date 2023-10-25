@@ -27,7 +27,7 @@
     "serve": "webpack serve --config configs/webpack.dev.js",
     "dev": "npm-run-all --parallel start serve",
     "tscheck": "tsc",
-    "test": "jest ",
+    "test": "jest --config=../../jest.config.js",
     "cypress": "cypress open --project . --env environment=development --component"
   },
   "devDependencies": {

@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "yarn workspaces run build",
-    "test": "wsrun --parallel test",
+    "test": "jest",
     "lint": "eslint \"packages/**/*.ts{,x}\" --fix",
     "prettier-format": "prettier --config .prettierrc 'packages/**/*.ts' --write",
     "serve": "wsrun --parallel serve",

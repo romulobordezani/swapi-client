@@ -21,7 +21,7 @@
     "build": "webpack --progress --config configs/webpack.prod.js",
     "serve": "webpack serve --config configs/webpack.dev.js",
     "dev": "npm-run-all --parallel start serve",
-    "test": "jest",
+    "test": "jest --config=../../jest.config.js",
     "tscheck": "tsc"
   },
   "devDependencies": {
