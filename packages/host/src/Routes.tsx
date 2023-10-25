@@ -6,7 +6,7 @@ const FilmsPage = React.lazy(async () => import('Films/Page'));
 import { Loader } from 'DesignSystem/Components';
 
 import HomePage from './pages/home/Home.page';
-import { PeoplePage } from './pages/people';
+import { PeoplePage, PeopleFeaturedPage } from './pages/people';
 import PlanetPage from './pages/planets/PlanetPage';
 
 export const AppRoutes: FC = () => {
@@ -29,6 +29,16 @@ export const AppRoutes: FC = () => {
             </Suspense>
           }
         />
+
+        <Route
+          path="people/:id"
+          element={
+            <Suspense fallback={<Loader />}>
+              <PeopleFeaturedPage />
+            </Suspense>
+          }
+        />
+
         <Route
           path="people"
           element={
@@ -37,6 +47,16 @@ export const AppRoutes: FC = () => {
             </Suspense>
           }
         />
+
+        <Route
+          path="films"
+          element={
+            <Suspense fallback={<Loader />}>
+              <FilmsPage />
+            </Suspense>
+          }
+        />
+
         <Route
           path="planets"
           element={
