@@ -9,7 +9,7 @@ export interface ButtonProps {
 
 export const Button: FC<ButtonProps> = ({ children, name, ...props }) => {
   return (
-    <button css={buttonStyle} name={name} {...props}>
+    <button css={buttonStyle} name={name} {...props} role="button" aria-pressed="false">
       {children}
     </button>
   );

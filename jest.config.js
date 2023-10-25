@@ -7,7 +7,6 @@ const config = {
   transform: {
     '^.+\\.tsx?$': 'ts-jest'
   },
-  collectCoverage: true,
   collectCoverageFrom: [
     '**/*.{ts,tsx}',
     '!**/node_modules/**',
