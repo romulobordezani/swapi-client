@@ -3,6 +3,7 @@ const config = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   watchPathIgnorePatterns: ['<rootDir>/node_modules/'],
+  
   transform: {
     '^.+\\.tsx?$': 'ts-jest'
   },

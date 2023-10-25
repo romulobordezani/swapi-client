@@ -56,7 +56,7 @@ const HomePage: FC = () => {
         </motion.div>
       </div>
       <div css={popularViews}>
-        {sortedViews.length && <h2>Popular visits from you:</h2>}
+        {sortedViews.length > 0 && <h2>Popular visits from you:</h2>}
         <ul>
           {sortedViews.map((view: CountedResource) => (
             <PopularDisplayer key={`${view.resourceType}-${view.id}`} pageView={view} />
