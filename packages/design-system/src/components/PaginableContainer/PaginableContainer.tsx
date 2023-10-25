@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { css } from '@emotion/react';
-
+import { FaBan } from 'react-icons/fa';
 import { Button, Loader } from '../';
+import { masonryContainer } from './PaginableContainer.style';
 
 export interface PaginableContainerProps {
   data:
@@ -43,7 +44,16 @@ export const PaginableContainer: FC<PaginableContainerProps> = ({
   }
 
   if (!data?.results || !data?.results?.length) {
-    return <div>No items.</div>;
+    return (
+      <div
+        css={css`
+          padding: 30px;
+          font-size: 1.3rem;
+        `}
+      >
+        <FaBan /> No results.
+      </div>
+    );
   }
 
   return (
@@ -52,9 +62,11 @@ export const PaginableContainer: FC<PaginableContainerProps> = ({
         padding: 30px;
       `}
     >
-      {data?.results?.map((item, index) => {
-        return <Displayer key={item.url} {...{ item, index }} />;
-      })}
+      <div css={masonryContainer}>
+        {data?.results?.map((item, index) => {
+          return <Displayer key={item.url} {...{ item, index }} className="item" />;
+        })}
+      </div>
 
       <div
         css={css`

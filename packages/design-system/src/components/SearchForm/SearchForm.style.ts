@@ -1,13 +1,13 @@
 import { css } from '@emotion/react';
-import { swYellow } from '../../theme';
 import searchIcon from './assets/icons-search.svg';
 
 export const searchFormContainer = css`
+  margin-top: 20px;
   padding: 0 0 0 30px;
 `;
 
 export const input = css`
-  background-color: ${swYellow};
+  background-color: #cccccc;
   background-image: url(${searchIcon});
   text-indent: 40px;
   background-repeat: no-repeat;

@@ -8,7 +8,7 @@ export interface SearchFormProps {
 
 export const SearchForm: FC<SearchFormProps> = ({ setSearch }) => {
   return (
-    <form autoComplete="on" css={searchFormContainer}>
+    <form autoComplete="on" css={searchFormContainer} onSubmit={(e) => e.preventDefault()}>
       <input
         css={input}
         type="text"

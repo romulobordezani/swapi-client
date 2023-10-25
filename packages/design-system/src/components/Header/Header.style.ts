@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { largeScreen } from '../../theme/breakpoints.constant';
-import { swYellow } from '../../theme/colors.constant';
+import { paperWhite, swYellow } from '../../theme/colors.constant';
 
 export const header = css`
   width: 100%;
@@ -43,7 +43,7 @@ export const header__logo__text = css`
   font-weight: 300;
   font-size: 1.7rem;
   letter-spacing: 5px;
-  color: #ffffff;
+  color: ${paperWhite}
   align-items: center;
   display: flex;
 `;

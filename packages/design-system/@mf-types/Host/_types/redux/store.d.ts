@@ -1,3 +1,6 @@
+/// <reference types="redux-persist/types/persistreducer" />
+/// <reference types="redux-persist/types/types" />
+/// <reference types="redux-persist" />
 import { ThunkAction, Action } from '@reduxjs/toolkit';
 export declare const store: import("@reduxjs/toolkit/dist/configureStore").ToolkitStore<{
     swapi_api: import("@reduxjs/toolkit/query").CombinedState<{
@@ -50,6 +53,7 @@ export declare const store: import("@reduxjs/toolkit/dist/configureStore").Toolk
             search: string;
         }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").SearchResult<import("../services/swapi/types").Vehicle>, "swapi_api">;
     }, never, "swapi_api">;
+    popular: import("./features/popular/popular.slice").CounterState & import("redux-persist/es/persistReducer").PersistPartial;
 }, import("redux").AnyAction, import("@reduxjs/toolkit").MiddlewareArray<[import("@reduxjs/toolkit").ThunkMiddleware<{
     swapi_api: import("@reduxjs/toolkit/query").CombinedState<{
         getFilmById: import("@reduxjs/toolkit/query").QueryDefinition<number, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").Film, "swapi_api">;
@@ -101,6 +105,7 @@ export declare const store: import("@reduxjs/toolkit/dist/configureStore").Toolk
             search: string;
         }, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").SearchResult<import("../services/swapi/types").Vehicle>, "swapi_api">;
     }, never, "swapi_api">;
+    popular: import("./features/popular/popular.slice").CounterState & import("redux-persist/es/persistReducer").PersistPartial;
 }, import("redux").AnyAction, undefined>, import("redux").Middleware<{}, import("@reduxjs/toolkit/query").RootState<{
     getFilmById: import("@reduxjs/toolkit/query").QueryDefinition<number, import("@reduxjs/toolkit/query").BaseQueryFn<string | import("@reduxjs/toolkit/query").FetchArgs, unknown, import("@reduxjs/toolkit/query").FetchBaseQueryError, {}, import("@reduxjs/toolkit/query").FetchBaseQueryMeta>, never, import("../services/swapi/types").Film, "swapi_api">;
     listFilms: import("@reduxjs/toolkit/query").QueryDefinition<{
@@ -154,3 +159,4 @@ export declare const store: import("@reduxjs/toolkit/dist/configureStore").Toolk
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
 export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, Action<string>>;
+export declare const persister: import("redux-persist").Persistor;
