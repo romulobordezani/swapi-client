@@ -18,7 +18,7 @@ export const PeopleFeaturedPage = () => {
 
   return (
     <FeaturedContainer resourceType={ResourceType.People} resource={data}>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      LOL
     </FeaturedContainer>
   );
 };

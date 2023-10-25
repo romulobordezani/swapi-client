@@ -1,10 +1,29 @@
 import { motion } from 'framer-motion';
 import React, { FC } from 'react';
+import { useSelector } from 'react-redux';
+import { CountedResource } from '../../redux/features/popular/types/CountedResource';
+
+import type { RootState } from '../../redux/store';
 
 import TrainingBall from './assets/jedi-training-ball.png';
 import { home, featuredImage } from './Home.style';
+import { PopularDisplayer } from './PopularDisplayer';
+
+const sorter = (a: CountedResource, b: CountedResource) => {
+  if (a.count < b.count) {
+    return 1;
+  }
+
+  if (a.count > b.count) {
+    return -1;
+  }
+
+  return 0;
+};
 
 const HomePage: FC = () => {
+  const views = useSelector((state: RootState) => state.popular.views);
+
   return (
     <div css={home}>
       <div css={featuredImage}>
@@ -15,10 +34,10 @@ const HomePage: FC = () => {
             rotate: -90
           }}
           initial={{
-            marginTop: '0px'
+            transform: 'translateY(0px)'
           }}
           animate={{
-            marginTop: '70px'
+            transform: 'translateY(70px)'
           }}
           transition={{
             repeat: Infinity,
@@ -29,6 +48,17 @@ const HomePage: FC = () => {
         >
           <img src={TrainingBall} alt="Jedi Training Ball" />
         </motion.div>
+      </div>
+      <div>
+        <h2>Popular</h2>
+        <ul>
+          {views
+            .sort(sorter)
+            .slice(0, 3)
+            .map((view: CountedResource) => (
+              <PopularDisplayer key={`${view.resourceType}-${view.id}`} pageView={view} />
+            ))}
+        </ul>
       </div>
     </div>
   );

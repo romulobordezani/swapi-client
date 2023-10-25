@@ -1,32 +1,37 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
+import { CountedResource } from './types/CountedResource';
+import { getIdFromUrl } from 'DesignSystem/Utils';
 
-export interface CounterState {
-  value: number;
+export interface PopularCounter {
+  views: CountedResource[];
 }
 
-const initialState: CounterState = {
-  value: 0
-};
+const initialState: PopularCounter = { views: [] };
 
 export const counterSlice = createSlice({
-  name: 'counter',
+  name: 'popular',
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
+    countPageView: (state, action: PayloadAction<Pick<CountedResource, 'resourceType' | 'resource'>>) => {
+      const currentView = state.views.find((view) => view.resource.url === action.payload.resource.url);
 
-    decrement: (state) => {
-      state.value -= 1;
-    },
+      const view: CountedResource = {
+        ...action.payload,
+        id: getIdFromUrl(action.payload.resource.url),
+        count: currentView ? Number(currentView?.count) + 1 : 1
+      };
 
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload;
+      if (!currentView) {
+        state.views.push(view);
+        return;
+      }
+
+      currentView.count = view.count;
     }
   }
 });
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+export const { countPageView } = counterSlice.actions;
 
 export default counterSlice.reducer;
