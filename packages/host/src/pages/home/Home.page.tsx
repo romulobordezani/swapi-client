@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
 import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
+
 import { CountedResource } from '../../redux/features/popular/types/CountedResource';
-
 import type { RootState } from '../../redux/store';
-
 import TrainingBall from './assets/jedi-training-ball.png';
 import { home, featuredImage, popularViews } from './Home.style';
 import { PopularDisplayer } from './PopularDisplayer';
@@ -57,7 +56,7 @@ const HomePage: FC = () => {
         </motion.div>
       </div>
       <div css={popularViews}>
-        <h2>Popular visits from you:</h2>
+        {sortedViews.length && <h2>Popular visits from you:</h2>}
         <ul>
           {sortedViews.map((view: CountedResource) => (
             <PopularDisplayer key={`${view.resourceType}-${view.id}`} pageView={view} />
