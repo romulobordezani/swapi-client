@@ -98,6 +98,12 @@ Add Design System components at the list following the pattern bellow in the fil
   }
 ```
 
+##### Same aplies for Cypress
+On file `packages/host/configs/webpack.cypress.js`, add new componets like:
+```javascript
+'DesignSystem/Components': path.resolve(__dirname, '../../design-system/src/components'),
+```
+
 </br></br></br>
 
 ## Running Host Cypress Component test
@@ -108,6 +114,8 @@ This is achieved using webpack's `resolve.alias` by telling it how to resolve re
 ```bash
 yarn workspace host cypress
 ```
+
+
 
 </br></br></br>
 

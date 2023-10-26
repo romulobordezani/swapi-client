@@ -26,10 +26,33 @@ module.exports = {
                   corejs: 3,
                 },
               ],
-              '@babel/preset-react',
+              [
+                "@babel/preset-react",
+                { "runtime": "automatic", "importSource": "@emotion/react" }
+              ]
+            ],
+            plugins: [
+              [
+                "@emotion/babel-plugin",
+                {
+                    // sourceMap is on by default but source maps are dead code eliminated in production
+                    sourceMap: true,
+                    autoLabel: "dev-only",
+                    labelFormat: "[local]",
+                    cssPropOptimization: true,
+                },
+              ],
             ],
           },
         },
+      },
+      {
+        test: /\.svg/,
+        type: 'asset/inline'
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
     ],
   },
@@ -37,7 +60,20 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
     alias: {
-      'DesignSystem/Button': path.resolve(__dirname, '../../design-system/src/components/Button'),
+      'DesignSystem/Components': path.resolve(__dirname, '../../design-system/src/components'),
+      'DesignSystem/Utils': path.resolve(__dirname, '../../design-system/src/utils'),
+      'DesignSystem/Theme': path.resolve(__dirname, '../../design-system/src/theme'),
+      'DesignSystem/GlobalStyle': path.resolve(__dirname, '../../design-system/src/global.style.ts'),
+      'DesignSystem/Hooks': path.resolve(__dirname, '../../design-system/src/hooks'),
+  
+      'Films/Page': path.resolve(__dirname, '../../films/src/pages/FilmsPage/FilmsPage.tsx'),
+      'Films/FilmFeaturedPage': path.resolve(__dirname, '../../films/src/pages/FilmsPage/FilmFeaturedPage.tsx'),
+  
+      'Host/ReduxHooks': path.resolve(__dirname, '../../host/src/redux/hooks.ts'),
+      'Host/ReduxStore': path.resolve(__dirname, '../../host/src/redux/store.ts'),
+      'Host/SwapiTypes': path.resolve(__dirname, '../../host/src/services/swapi/types'),
+      'Host/FeaturedContainer': path.resolve(__dirname, '../../host/src/layouts/featured/FeaturedContainer/FeaturedContainer.tsx'),
+
     },
   },
 };
