@@ -1,3 +1,5 @@
+/// <reference types="@testing-library/cypress" />
+
 import React from 'react';
 import App from '../App';
 import { mount } from 'cypress/react18';
