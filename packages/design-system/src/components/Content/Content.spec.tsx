@@ -19,7 +19,7 @@ describe('<Content />', () => {
 
     render(<Content value={mockedValue} />);
 
-    expect(await screen.queryByText(':')).toBeNull();
+    expect(screen.queryByText(':')).toBeNull();
     await screen.findByText(`${mockedValue}`);
   });
 });

@@ -1,5 +1,5 @@
 import React, { FC, Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { MainLayout } from './layouts/main';
 
 const FilmsPage = React.lazy(async () => import('Films/Page'));
@@ -14,6 +14,11 @@ import { PlanetFeaturedPage } from './pages/planets/PlanetFeaturedPage';
 import { SpeciesPage, SpeciesFeaturedPage } from './pages/species';
 import { StarshipsFeaturedPage, StarshipsPage } from './pages/starships';
 import { VehiclesFeaturedPage, VehiclesPage } from './pages/vehicles';
+
+export const LocationDisplay = () => {
+  const location = useLocation();
+  return <div data-testid="location-display">{location.pathname}</div>;
+};
 
 export const AppRoutes: FC = () => {
   return (

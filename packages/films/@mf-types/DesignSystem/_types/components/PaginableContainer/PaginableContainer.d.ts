@@ -5,7 +5,7 @@ export interface PaginableContainerProps {
         previous: boolean;
         next: boolean;
     } | undefined;
-    error: Record<string, string>;
+    error: Record<string, string> | undefined;
     isLoading: boolean;
     isFetching: boolean;
     setPage: (page: number) => void;

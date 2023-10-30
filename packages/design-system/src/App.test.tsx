@@ -7,6 +7,6 @@ import App from './App';
 describe('App', () => {
   it('should render without errors', async () => {
     render(<App />);
-    await screen.findByText('Star Wars Oracle');
+    await screen.findByText('Design System Package');
   });
 });
