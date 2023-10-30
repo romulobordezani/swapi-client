@@ -4,9 +4,9 @@ import '@testing-library/jest-dom';
 
 import App from './App';
 
-describe('<App /> - Design System Package', () => {
+describe('<App /> - Films package', () => {
   it('should render without errors', async () => {
     render(<App />);
-    await screen.findByText('Design System Package');
+    await screen.findByText('Films Package');
   });
 });

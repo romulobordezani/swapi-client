@@ -1,7 +1,10 @@
-const VISUAL_GUIDE_BASE_URL = 'https://starwars-visualguide.com/assets/img/';
+import { isEmpty } from 'lodash';
+import { getHostedPlaceHolderImageUrl } from '../getHostedPlaceHolderImageUrl';
+
+export const VISUAL_GUIDE_BASE_URL = 'https://starwars-visualguide.com/assets/img/';
 
 export const getIdFromUrl = (url: string): string | null => {
-  const matches = url.match(/([a-z0-9]+)(?:\/?$)/);
+  const matches = url.match(/([0-9]+)(?:\/?$)/);
 
   if (matches && matches?.length === 2) {
     return matches[1];
@@ -21,9 +24,15 @@ const RESOURCE_NAME: Record<string, string | null> = {
 };
 
 const getResourceName = (resourceType: string) => {
-  return RESOURCE_NAME[resourceType] || RESOURCE_NAME.default;
+  return RESOURCE_NAME[resourceType];
 };
 
-export const getResourceImageUrl = (resourceType: string, url: string): string | null => {
-  return `${VISUAL_GUIDE_BASE_URL}${getResourceName(resourceType)}/${getIdFromUrl(url)}.jpg`;
+export const getResourceImageUrl = (resourceType: string, url: string): string => {
+  const id = getIdFromUrl(url);
+
+  if (!id || !resourceType || isEmpty(resourceType)) {
+    return getHostedPlaceHolderImageUrl();
+  }
+
+  return `${VISUAL_GUIDE_BASE_URL}${getResourceName(resourceType)}/${id}.jpg`;
 };
